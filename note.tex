@@ -23,7 +23,28 @@
 
 % \newpage
 \section{spin field effect transistor}
-A type of quantum field effect transistor that operates purely on the flow of spin current in the absence of charge current.
+A type of quantum field effect transistor that operates purely on the flow of spin current in the absence of charge current. The rotating field induces a time-independent dc spin current, and at the same time generates no charge cur- rent. The physical principle of our SFET is due to a spin flip mecha- nism provided by the field.
+\section{Hamiltonian}
+\begin{equation}
+\begin{split}
+H=&\sum_{k, \sigma, \alpha=L, R} \epsilon_{k} C_{k \alpha \sigma}^{+} C_{k \alpha \sigma}+\sum_{\sigma}\left[\epsilon+\sigma B_{0} \cos \theta\right] d_{\sigma}^{+} d_{\sigma}\\
+&+H^{\prime}(t)+\sum_{k, \sigma, \alpha=L, R}\left[T_{k \alpha} C_{k \alpha \sigma}^{+} d_{\sigma}+\mathrm{c.c.}\right]
+\end{split}
+\end{equation}
+We assume that there is only on orbit in the scattering region.
+\[
+\epsilon_{Lk} = \epsilon_{Rk} = \epsilon_{k}.
+\]
+A rotating magnetic field is
+\begin{equation}
+\textbf{B} = B_{0}sin\theta [cos(\omega t) \hat{x} + sin(\omega t) \hat{y}] + B_{0}cos\theta \hat{z}.
+\end{equation}
+A counterclock- wise rotating field allows a spin-down electron to absorb a photon and flip to spin-up, and it does not allow a spin-up electron to absorb a photon and flip to spin-down.
+
+The scattering region is characterized by an energy level$\epsilon = \epsilon_{0} - qV_{g}$, controlled by the gate voltage $V_{g}$.
+
+We solve the transport properties (charge and spin currents) of the model in both adiabatic and nonadiabatic regimes using the stan- dard Keldysh nonequilibrium Green’s function technique.
+
 \begin{thebibliography}{10}
 \bibitem{ref1}
 Y, K, Kato. Observation of the Spin Hall Effect in Semiconductors[J]. Science, 2004.
