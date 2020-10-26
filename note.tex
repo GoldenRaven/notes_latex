@@ -47,19 +47,74 @@ We assume that there is only one orbit in the scattering region.
 \epsilon_{Lk} = \epsilon_{Rk} = \epsilon_{k}.
 \]
 A counterclock-wise rotating field allows a spin-down electron to absorb a photon and flip to spin-up, and it does not allow a spin-up electron to absorb a photon and flip to spin-down.
-
+\begin{equation}
+H^{\prime}(t)=\gamma\left[\exp (-i \omega t) d_{\uparrow}^{+} d_{\downarrow}+\exp (i \omega t) d_{\downarrow}^{+} d_{\uparrow}\right]
+\end{equation}
+\begin{equation}
+\gamma=B_{0} \sin \theta
+\end{equation}
 The scattering region is characterized by an energy level$\epsilon = \epsilon_{0} - qV_{g}$, controlled by the gate voltage $V_{g}$.
 
 We solve the transport properties (charge and spin currents) of the model in both adiabatic and nonadiabatic regimes using the stan- dard Keldysh nonequilibrium Green’s function technique.
-
+\section{Operator evolution}
+\begin{equation}
+\begin{split}
+\frac{d}{dt}\hat{N}_{\alpha k\sigma} &= \frac{i}{\hbar}[H, C_{\alpha k\sigma}^{\dag}C_{\alpha k\sigma}] = \left[\sum_{k', \sigma', \alpha'=L, R}\left[T_{k' \alpha'} C_{k' \alpha' \sigma'}^{+} d_{\sigma'}+\mathrm{c.c.}\right], C_{\alpha k\sigma}^{\dag}C_{\alpha k\sigma}\right]\\
+&=\frac{i}{\hbar}\sum_{k', \sigma', \alpha'=L, R}\left[ -T_{k' \alpha'} C_{k' \alpha' \sigma'}^{+} d_{\sigma'}\delta_{\alpha\alpha'}\delta_{kk'}\delta_{\sigma\sigma'}+\mathrm{c.c.}\right]\\
+&=\frac{i}{\hbar}[-T_{k \alpha} C_{k \alpha \sigma}^{\dag} d_{\sigma} + T_{k \alpha}^{*} d_{\sigma}^{\dag}C_{k \alpha \sigma}]
+\end{split}
+\end{equation}
+So, the charge current is given by
+\begin{equation}
+\begin{split}
+I_{\alpha\sigma}(t) &= e\langle\frac{d}{dt}\hat{N}_{\alpha k\sigma}(t)\rangle \\
+&=\frac{ie}{\hbar}(\langle -T_{k \alpha} C_{k \alpha \sigma}^{\dag}(t) d_{\sigma}(t)\rangle + \langle T_{k \alpha}^{*} d_{\sigma}^{\dag}(t)C_{k \alpha \sigma}(t)\rangle)
+\end{split}
+\end{equation}
 \section{Adiabatic regime($\omega$ is small)}
+Equation of motion of particle operator $\hat{N}_{\alpha k\sigma}$ in the lead $\alpha$ is
+\begin{equation}
+\begin{split}
+\frac{d}{dt}\hat{N}_{\alpha k\sigma} &= \frac{i}{\hbar}[H, c_{\alpha k\sigma}^{\dag}c_{\alpha k\sigma}] = \left[\sum_{k', \sigma', \alpha'=L, R}\left[t_{k' \alpha'} c_{k' \alpha' \sigma'}^{\dag} d_{\sigma'}+\mathrm{c.c.}\right], c_{\alpha k\sigma}^{\dag}c_{\alpha k\sigma}\right]\\
+&=\frac{i}{\hbar}\sum_{k', \sigma', \alpha'=L, R}\left[ -t_{k' \alpha'} c_{k' \alpha' \sigma'}^{\dag} d_{\sigma'}\delta_{\alpha\alpha'}\delta_{kk'}\delta_{\sigma\sigma'}+\mathrm{c.c.}\right]\\
+&=\frac{i}{\hbar}[-t_{k \alpha} c_{k \alpha \sigma}^{\dag} d_{\sigma} + t_{k \alpha}^{*} d_{\sigma}^{\dag}c_{k \alpha \sigma}]
+\end{split}
+\end{equation}
+So, the charge current is given by
+\begin{equation}
+\begin{split}
+I_{\alpha\sigma}(t) &= e\langle\frac{d}{dt}\hat{N}_{\alpha k\sigma}(t)\rangle \\
+&=\frac{ie}{\hbar}(\langle -t_{k \alpha} c_{k \alpha \sigma}^{\dag}(t) d_{\sigma}(t)\rangle + \langle t_{k \alpha}^{*} d_{\sigma}^{\dag}(t)c_{k \alpha \sigma}(t)\rangle)
+\end{split}
+\end{equation}
+Define the lesser Green's function
+\begin{equation}
+G_{\sigma',k\alpha\sigma}^{<}(\tau,\tau') = i\langle C_{k\alpha\sigma}^{\dag}(\tau') d_{\sigma'}(\tau)\rangle .
+\end{equation}
+More generally, we define the contour Green's function
+\begin{equation}
+G_{\sigma',k\alpha\sigma}(\tau,\tau') = -i\langle  d_{\sigma'}(\tau) C_{k\alpha\sigma}^{\dag}(\tau')\rangle .
+\end{equation}
+Following Jauho's notation~\cite{Jauho}
+\begin{equation}
+G_{n,k\alpha}(\tau,\tau')=\sum_{m} \int d \tau_{1} G_{n m}\left(\tau, \tau_{1}\right) t_{k \alpha m}^{*} g_{k \alpha}\left(\tau_{1}, \tau^{\prime}\right)
+\end{equation}
+we have???
+\begin{equation}
+G_{n,k\alpha}(\tau,\tau')=\sum_{m} \int d \tau_{1} G_{n m}\left(\tau, \tau_{1}\right) t_{k \alpha m}^{*} g_{k \alpha}\left(\tau_{1}, \tau^{\prime}\right)
+\end{equation}
 
-
+So, the charge current is given by (why? DC?)
+\begin{equation}
+d Q_{\alpha \sigma}(t) / d t=q \int \frac{d E}{2 \pi}\left(-\partial_{E} f\right)\left[\Gamma_{\alpha} \mathbf{G}^{r}(t) \mathbf{\Delta} \mathbf{G}^{a}(t)\right]_{\sigma \sigma}
+\end{equation}
 
 
 \begin{thebibliography}{10}
 \bibitem{ref1}
 Y, K, Kato. Observation of the Spin Hall Effect in Semiconductors[J]. Science, 2004.
+\bibitem{Jauho}
+Antti-Pekka Jauho, Quantum Kinetics in Transport and Optics of Semiconductors, P188.
 \end{thebibliography}
 
 \end{CJK}
