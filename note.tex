@@ -38,25 +38,55 @@ B_{z} = B_{0}\rm{cos}\theta.
 The Hamiltonian of system is
 \begin{equation}
 \begin{split}
-H=&\sum_{k, \sigma, \alpha=L, R} \epsilon_{k} C_{k \alpha \sigma}^{+} C_{k \alpha \sigma}+\sum_{\sigma}\left[\epsilon+\sigma B_{0} \cos \theta\right] d_{\sigma}^{+} d_{\sigma}\\
-&+H^{\prime}(t)+\sum_{k, \sigma, \alpha=L, R}\left[T_{k \alpha} C_{k \alpha \sigma}^{+} d_{\sigma}+\mathrm{c.c.}\right]
+H=&\sum_{k, \sigma, \alpha=L, R} \epsilon_{k} C_{k \alpha \sigma}^{+} C_{k \alpha \sigma}+\sum_{n\sigma}\left[\epsilon_{n}+\sigma B_{0} \cos \theta\right] d_{n\sigma}^{+} d_{n\sigma}\\
+&+H^{\prime}(t)+\sum_{k,n, \sigma, \alpha=L, R}\left[T_{k \alpha n} C_{k \alpha \sigma}^{+} d_{n\sigma}+\mathrm{c.c.}\right]
 \end{split}
 \end{equation}
-We assume that there is only one orbit in the scattering region.
-\[
-\epsilon_{Lk} = \epsilon_{Rk} = \epsilon_{k}.
-\]
+We assume that there are multiple orbits in the scattering region, which is different from the original paper, in which only one orbit is considered. Energy level of lead $\epsilon_{Lk} = \epsilon_{Rk} = \epsilon_{k}$.
+
 A counterclock-wise rotating field allows a spin-down electron to absorb a photon and flip to spin-up, and it does not allow a spin-up electron to absorb a photon and flip to spin-down.
 \begin{equation}
-H^{\prime}(t)=\gamma\left[\exp (-i \omega t) d_{\uparrow}^{+} d_{\downarrow}+\exp (i \omega t) d_{\downarrow}^{+} d_{\uparrow}\right]
+H^{\prime}(t)=\sum_{n}\gamma\left[\exp (-i \omega t) d_{n\uparrow}^{+} d_{n\downarrow}+\exp (i \omega t) d_{n\downarrow}^{+} d_{n\uparrow}\right]
 \end{equation}
 \begin{equation}
 \gamma=B_{0} \sin \theta
 \end{equation}
-The scattering region is characterized by an energy level$\epsilon = \epsilon_{0} - qV_{g}$, controlled by the gate voltage $V_{g}$.
+The scattering region is characterized by an energy level $\epsilon_{n} = \epsilon_{n}^{0} - qV_{g}$, controlled by the gate voltage $V_{g}$.
 
-We solve the transport properties (charge and spin currents) of the model in both adiabatic and nonadiabatic regimes using the stan- dard Keldysh nonequilibrium Green’s function technique.
+We solve the transport properties (charge and spin currents) of the model in both adiabatic and nonadiabatic regimes using the standard Keldysh nonequilibrium Green’s function technique.
 \section{Operator evolution}
+EoM of $d_{\sigma}^{\dag}$ is
+\begin{equation}
+\partial_{t'} d_{n\sigma}^{\dag}(t') = i[H, d_{n\sigma}^{\dag}]
+\label{eq:eom1}
+\end{equation}
+\begin{equation}
+[\sum_{n'\sigma'}\left[\epsilon_{n'}+\sigma B_{0} \cos \theta\right] d_{n'\sigma'}^{\dag} d_{n'\sigma'}, d_{n\sigma}^{\dag}] =(\epsilon_{n}+\sigma B_{0} \cos \theta) d_{n\sigma}^{\dag}
+\end{equation}
+\begin{equation}
+\begin{split}
+[d_{n'\uparrow}^{\dag} d_{n'\downarrow}, d_{n\sigma}^{\dag}] &= d_{n'\uparrow}^{\dag}\{d_{n'\downarrow}, d_{n\sigma}^{\dag}\} - \{d_{n'\uparrow}^{\dag}, d_{n\sigma}^{\dag}\}d_{n'\downarrow} \\
+&=d_{\uparrow}^{\dag}\delta_{nn'}\delta_{\sigma\downarrow},
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+[d_{n'\downarrow}^{\dag} d_{n'\uparrow}, d_{n\sigma}^{\dag}] &= d_{n'\downarrow}^{\dag}\{d_{n'\uparrow}, d_{n\sigma}^{\dag}\} - \{d_{n'\downarrow}^{\dag}, d_{n\sigma}^{\dag}\}d_{n'\uparrow} \\
+&=d_{n'\uparrow}^{\dag}\delta_{nn'}\delta_{\sigma\uparrow}.
+\end{split}
+\end{equation}
+Then
+\begin{equation}
+[H^{\prime}(t), d_{n\sigma}^{\dag}] = \gamma(e^{-i \omega t} d_{n\uparrow}^{\dag} \delta_{\sigma\downarrow} + e^{i \omega t} d_{n\downarrow}^{\dag} \delta_{\sigma\uparrow})
+\end{equation}
+\begin{equation}
+\sum_{k, n',\sigma', \alpha=L, R}\left[T_{n'k \alpha} C_{k \alpha \sigma'}^{\dag} d_{n'\sigma'}+\mathrm{c.c.}\right, d_{n\sigma}^{\dag}] = \sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}
+\end{equation}
+Substitute into Eq. (\ref{eq:eom1}), we get
+\begin{equation}
+\partial_{t'} d_{n\sigma}^{\dag}(t') = i[(\epsilon_{n}^{0}+\sigma B_{0} \cos \theta) d_{n\sigma}^{\dag} + \gamma(e^{-i \omega t} d_{n\uparrow}^{\dag} \delta_{\sigma\downarrow} + e^{i \omega t} d_{n\downarrow}^{\dag} \delta_{\sigma\uparrow}) + \sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}]
+\end{equation}
+Equation of motion of particle operator $\hat{N}_{\alpha k\sigma}$ in the lead $\alpha$ is
 \begin{equation}
 \begin{split}
 \frac{d}{dt}\hat{N}_{\alpha k\sigma} &= \frac{i}{\hbar}[H, C_{\alpha k\sigma}^{\dag}C_{\alpha k\sigma}] = \left[\sum_{k', \sigma', \alpha'=L, R}\left[T_{k' \alpha'} C_{k' \alpha' \sigma'}^{+} d_{\sigma'}+\mathrm{c.c.}\right], C_{\alpha k\sigma}^{\dag}C_{\alpha k\sigma}\right]\\
@@ -64,45 +94,88 @@ We solve the transport properties (charge and spin currents) of the model in bot
 &=\frac{i}{\hbar}[-T_{k \alpha} C_{k \alpha \sigma}^{\dag} d_{\sigma} + T_{k \alpha}^{*} d_{\sigma}^{\dag}C_{k \alpha \sigma}]
 \end{split}
 \end{equation}
-So, the charge current is given by
+\section{Charge current }
+So, the charge current due to L(R) lead with spin $\sigma$ is given by
 \begin{equation}
 \begin{split}
-I_{\alpha\sigma}(t) &= e\langle\frac{d}{dt}\hat{N}_{\alpha k\sigma}(t)\rangle \\
-&=\frac{ie}{\hbar}(\langle -T_{k \alpha} C_{k \alpha \sigma}^{\dag}(t) d_{\sigma}(t)\rangle + \langle T_{k \alpha}^{*} d_{\sigma}^{\dag}(t)C_{k \alpha \sigma}(t)\rangle)
-\end{split}
-\end{equation}
-\section{Adiabatic regime($\omega$ is small)}
-Equation of motion of particle operator $\hat{N}_{\alpha k\sigma}$ in the lead $\alpha$ is
-\begin{equation}
-\begin{split}
-\frac{d}{dt}\hat{N}_{\alpha k\sigma} &= \frac{i}{\hbar}[H, c_{\alpha k\sigma}^{\dag}c_{\alpha k\sigma}] = \left[\sum_{k', \sigma', \alpha'=L, R}\left[t_{k' \alpha'} c_{k' \alpha' \sigma'}^{\dag} d_{\sigma'}+\mathrm{c.c.}\right], c_{\alpha k\sigma}^{\dag}c_{\alpha k\sigma}\right]\\
-&=\frac{i}{\hbar}\sum_{k', \sigma', \alpha'=L, R}\left[ -t_{k' \alpha'} c_{k' \alpha' \sigma'}^{\dag} d_{\sigma'}\delta_{\alpha\alpha'}\delta_{kk'}\delta_{\sigma\sigma'}+\mathrm{c.c.}\right]\\
-&=\frac{i}{\hbar}[-t_{k \alpha} c_{k \alpha \sigma}^{\dag} d_{\sigma} + t_{k \alpha}^{*} d_{\sigma}^{\dag}c_{k \alpha \sigma}]
-\end{split}
-\end{equation}
-So, the charge current is given by
-\begin{equation}
-\begin{split}
-I_{\alpha\sigma}(t) &= e\langle\frac{d}{dt}\hat{N}_{\alpha k\sigma}(t)\rangle \\
-&=\frac{ie}{\hbar}(\langle -t_{k \alpha} c_{k \alpha \sigma}^{\dag}(t) d_{\sigma}(t)\rangle + \langle t_{k \alpha}^{*} d_{\sigma}^{\dag}(t)c_{k \alpha \sigma}(t)\rangle)
+I_{L\sigma}(t) &= e\langle\frac{d}{dt}\hat{N}_{\sigma}(t)\rangle \\
+&=\frac{ie}{\hbar}\sum_{kn\alpha\in L}(\langle -T_{k \alpha n} C_{k \alpha \sigma}^{\dag}(t) d_{n\sigma}(t)\rangle + \langle T_{k \alpha n}^{*} d_{n\sigma}^{\dag}(t)C_{k \alpha \sigma}(t)\rangle)
 \end{split}
 \end{equation}
 Define the lesser Green's function
 \begin{equation}
-G_{\sigma',k\alpha\sigma}^{<}(\tau,\tau') = i\langle C_{k\alpha\sigma}^{\dag}(\tau') d_{\sigma'}(\tau)\rangle .
+G_{n\sigma',k\alpha\sigma}^{<}(\tau,\tau') = i\langle C_{k\alpha\sigma}^{\dag}(\tau') d_{n\sigma'}(\tau)\rangle ,
+\label{eq:contour}
+\end{equation}
+the current becomes
+\begin{equation}
+I_{L\sigma}(t)=\frac{-e}{\hbar}\sum_{kn\alpha\in L}(T_{k\alpha n}G_{n,k\alpha\sigma}^{<}(t,t) - T_{k \alpha n}^{*} G_{k\alpha,n}^{<}(t,t)\rangle)
 \end{equation}
 More generally, we define the contour Green's function
 \begin{equation}
-G_{\sigma',k\alpha\sigma}(\tau,\tau') = -i\langle  d_{\sigma'}(\tau) C_{k\alpha\sigma}^{\dag}(\tau')\rangle .
+G_{n\sigma',k\alpha\sigma}(\tau,\tau') = -i\langle  d_{n\sigma'}(\tau) C_{k\alpha\sigma}^{\dag}(\tau')\rangle .
 \end{equation}
-Following Jauho's notation~\cite{Jauho}
+EoM of operator $C_{k\alpha \sigma}^{\dag}$ is
 \begin{equation}
-G_{n,k\alpha}(\tau,\tau')=\sum_{m} \int d \tau_{1} G_{n m}\left(\tau, \tau_{1}\right) t_{k \alpha m}^{*} g_{k \alpha}\left(\tau_{1}, \tau^{\prime}\right)
+\partial_{t'} C_{k\alpha \sigma}^{\dag}(t') = i[H, C_{k\alpha \sigma}^{\dag}] = i( \varepsilon_{k}C_{k\alpha \sigma}^{\dag} + \sum_{n}T_{k\alpha n}d_{n\sigma}^{\dag})
 \end{equation}
-we have???
+The equation-of-motion for the time-ordered Green function
 \begin{equation}
-G_{n,k\alpha}(\tau,\tau')=\sum_{m} \int d \tau_{1} G_{n m}\left(\tau, \tau_{1}\right) t_{k \alpha m}^{*} g_{k \alpha}\left(\tau_{1}, \tau^{\prime}\right)
+\begin{split}
+-i \frac{\partial}{\partial t^{\prime}} G_{n\sigma',k\alpha\sigma}^{t} \left(t,t^{\prime}\right)&= \delta(t-t')\langle \{d_{n\sigma'}, C_{k\alpha\sigma}^{\dag}\}\rangle - \langle T_{c}d_{n\sigma'}\partial_{t'}C_{k\alpha\sigma}^{\dag}\rangle \\
+&=\varepsilon_{k} G_{n\sigma',k\alpha\sigma}^{t}\left(t,t^{\prime}\right)+ \sum_{m} T_{k\alpha m}^{*} G_{n\sigma',m\sigma}^{t}(t,t^{\prime})
+\end{split}
 \end{equation}
+So, we have
+\begin{equation}
+(-i \frac{\partial}{\partial t^{\prime}} -\varepsilon_{k})G_{n\sigma',k\alpha\sigma}^{t} \left(t,t^{\prime}\right)= \sum_{m} T_{k\alpha m}^{*} G_{n\sigma',m\sigma}^{t}(t,t^{\prime})
+\label{eq:free}
+\end{equation}
+in which
+\begin{equation}
+G_{n\sigma',m\sigma}^{t}(t,t^{\prime}) = -i\langle T_{c}d_{n\sigma'}(t)d_{m\sigma}^{\dag}(t')\rangle.
+\end{equation}
+Similarly, we evaluate the EoM for free Green's function $g_{k\alpha\sigma}^{t}(t,t')$ in lead $\alpha$ (note that $H=\sum_{k\sigma\alpha} \epsilon_{k} C_{k \alpha \sigma}^{\dag} C_{k \alpha \sigma}$).
+\begin{equation}
+\begin{split}
+-i \frac{\partial}{\partial t^{\prime}} g_{k\alpha\sigma}^{t} \left(t,t^{\prime}\right)&= \delta(t-t')\langle \{C_{k\alpha\sigma}, C_{k\alpha\sigma}^{\dag}\}\rangle - \langle T_{c}C_{k\alpha\sigma}\partial_{t'}C_{k\alpha\sigma}^{\dag}\rangle \\
+&=\delta(t-t') + \varepsilon_{k} g_{k\alpha\sigma}^{t}\left(t,t^{\prime}\right),
+\end{split}
+\end{equation}
+we have
+\begin{equation}
+(-i \frac{\partial}{\partial t^{\prime}}-\varepsilon_{k}) g_{k\alpha\sigma}^{t} \left(t,t^{\prime}\right)=\delta(t-t').
+\label{eq:free-delta}
+\end{equation}
+Substitute Eq. (\ref{eq:free-delta}) into Eq. (\ref{eq:free}) and integrate on both sides, we get an equation analogous to Jauho's notation~\cite{Jauho},
+\begin{equation}
+G_{n,k\alpha}(\tau,\tau')=\sum_{m} \int d \tau_{1} G_{n m}\left(\tau, \tau_{1}\right) t_{k \alpha m}^{*} g_{k \alpha}\left(\tau_{1}, \tau^{\prime}\right),
+\nonumber
+\end{equation}
+we have
+\begin{equation}
+G_{n\sigma',k\alpha\sigma}^{t}(t,t')=\sum_{m}\int d t_{1} G_{n\sigma',m\sigma}\left(t, t_{1}\right) T_{k \alpha m}^{*} g_{k \alpha\sigma}^{t}\left(\tau_{1}, \tau^{\prime}\right).
+\end{equation}
+When there is only one orbit presents, this equation reduces to
+\begin{equation}
+G_{\sigma',k\alpha\sigma}^{t}(t,t')=\int d t_{1} G_{\sigma',\sigma}\left(t, t_{1}\right) T_{k \alpha}^{*} g_{k \alpha\sigma}^{t}\left(\tau_{1}, \tau^{\prime}\right).
+\end{equation}
+Since the contour Green's function has the same structure as real-time Green's function, the we have relation
+\begin{equation}
+G_{n\sigma',k\alpha\sigma}(\tau,\tau')=\sum_{m}\int d \tau_{1} G_{n\sigma',m\sigma}\left(\tau, \tau_{1}\right) T_{k \alpha m}^{*} g_{k \alpha\sigma}\left(\tau_{1}, \tau^{\prime}\right)
+\end{equation}
+where $G_{n\sigma',k\alpha\sigma}(\tau,\tau')$ is contour Green's function defined in Eq. (\ref{eq:contour}), and similarly the contour Green's function for non-interacting lead is defined as
+\begin{equation}
+g_{k\alpha\sigma}(\tau,\tau') = -i\langle T_{c}C_{k\alpha\sigma}(\tau)C_{k\alpha\sigma}^{\dag}(\tau')\rangle
+\end{equation}
+After analytic continuation, the current is formulated as
+\begin{equation}
+\begin{aligned}
+I_{L\sigma}(t) &=-\frac{e}{\hbar} \int d t_{1} \operatorname{Tr}\left[G^{r}\left(t, t_{1}\right) \Sigma_{\alpha}^{<}\left(t_{1}, t\right)\right.\\
+&\left.+G^{<}\left(t, t_{1}\right) \Sigma_{\alpha}^{a}\left(t_{1}, t\right)\right]+h . c .
+\end{aligned}
+\end{equation}
+\section{Adiabatic regime($\omega$ is small)}
 
 So, the charge current is given by (why? DC?)
 \begin{equation}
