@@ -60,9 +60,12 @@ EoM of $d_{\sigma}^{\dag}$ is
 \partial_{t'} d_{n\sigma}^{\dag}(t') = i[H, d_{n\sigma}^{\dag}]
 \label{eq:eom1}
 \end{equation}
+central dot part:
 \begin{equation}
 [\sum_{n'\sigma'}\left[\epsilon_{n'}+\sigma B_{0} \cos \theta\right] d_{n'\sigma'}^{\dag} d_{n'\sigma'}, d_{n\sigma}^{\dag}] =(\epsilon_{n}+\sigma B_{0} \cos \theta) d_{n\sigma}^{\dag}
+\label{eq:part1}
 \end{equation}
+rotating magnetic field part:
 \begin{equation}
 \begin{split}
 [d_{n'\uparrow}^{\dag} d_{n'\downarrow}, d_{n\sigma}^{\dag}] &= d_{n'\uparrow}^{\dag}\{d_{n'\downarrow}, d_{n\sigma}^{\dag}\} - \{d_{n'\uparrow}^{\dag}, d_{n\sigma}^{\dag}\}d_{n'\downarrow} \\
@@ -79,10 +82,11 @@ Then
 \begin{equation}
 [H^{\prime}(t), d_{n\sigma}^{\dag}] = \gamma(e^{-i \omega t} d_{n\uparrow}^{\dag} \delta_{\sigma\downarrow} + e^{i \omega t} d_{n\downarrow}^{\dag} \delta_{\sigma\uparrow})
 \end{equation}
+Coupling part
 \begin{equation}
 \sum_{k, n',\sigma', \alpha=L, R}\left[T_{n'k \alpha} C_{k \alpha \sigma'}^{\dag} d_{n'\sigma'}+\mathrm{c.c.}\right, d_{n\sigma}^{\dag}] = \sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}
 \end{equation}
-Substitute into Eq. (\ref{eq:eom1}), we get
+Substitute these three parts into Eq. (\ref{eq:eom1}), we get
 \begin{equation}
 \partial_{t'} d_{n\sigma}^{\dag}(t') = i[(\epsilon_{n}^{0}+\sigma B_{0} \cos \theta) d_{n\sigma}^{\dag} + \gamma(e^{-i \omega t} d_{n\uparrow}^{\dag} \delta_{\sigma\downarrow} + e^{i \omega t} d_{n\downarrow}^{\dag} \delta_{\sigma\uparrow}) + \sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}]
 \end{equation}
@@ -171,10 +175,100 @@ g_{k\alpha\sigma}(\tau,\tau') = -i\langle T_{c}C_{k\alpha\sigma}(\tau)C_{k\alpha
 After analytic continuation, the current is formulated as
 \begin{equation}
 \begin{aligned}
-I_{L\sigma}(t) &=-\frac{e}{\hbar} \int d t_{1} \operatorname{Tr}\left[G^{r}\left(t, t_{1}\right) \Sigma_{\alpha}^{<}\left(t_{1}, t\right)\right.\\
+I_{\alpha\sigma}(t) &=-\frac{e}{\hbar} \int d t_{1} \operatorname{Tr}\left[G^{r}\left(t, t_{1}\right) \Sigma_{\alpha}^{<}\left(t_{1}, t\right)\right.\\
 &\left.+G^{<}\left(t, t_{1}\right) \Sigma_{\alpha}^{a}\left(t_{1}, t\right)\right]+h . c .
 \end{aligned}
 \end{equation}
+Dyson equation:
+\begin{equation}
+G = g + g\Sigma G
+\end{equation}
+Note the double Fourier transformation, if
+\begin{equation}
+F(t)=\int d t_{1} G_{1}\left(t, t_{1}\right) G_{2}\left(t_{1}, t\right)
+\end{equation}
+then
+\begin{equation}
+F(\omega)=\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} G_{1}\left(E+\omega, E^{\prime}\right) G_{2}\left(E^{\prime}, E\right).
+\end{equation}
+If
+\begin{equation}
+F\left(t_{1}, t_{2}\right)=\int d t G_{1}\left(t_{1}, t\right) G_{2}\left(t, t_{2}\right),
+\end{equation}
+then
+\begin{equation}
+F\left(E_{1}, E_{2}\right)=\int\frac{d E}{2\pi} G_{1}\left(E_{1}, E\right) G_{2}\left(E, E_{2}\right).
+\end{equation}
+Following Eq. (224) in WangJian's note, its Fourier transformation is
+\begin{equation}
+\begin{split}
+I_{\alpha\sigma}(\omega)=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr}\left[&G^{r}\left(E+\omega, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) \\
+&+ G^{<}(E+\omega, E')\Sigma_{\alpha}^{a}(E', E) ] + c.c.
+\end{split}
+\end{equation}
+Here, $G^{r,<} \equiv G_{n\sigma',m\sigma}^{r,<}$, and matrix element
+\begin{equation}
+\Sigma_{\alpha,mn}^{\gamma}(t_{1}, t_{2}) = \sum_{k} T_{k\alpha m}^{*}(t_{1}) g_{k\alpha}^{\gamma}(t_{1}, t_{2}) T_{k\alpha n}(t_{2}),
+\end{equation}
+in which, $g_{k\sigma}$ is the free propagator of lead. From Dyson equation, we have (different from Eq. (77) in Chap. II ???)
+\begin{equation}
+G^{<}=G^{r} \Sigma^{<} G^{a}
+\end{equation}
+whose Fourier transformation gives
+\begin{equation}
+G^{<}(E_{1},E_{2})=\int\frac{dE}{2\pi}\frac{dE'}{2\pi}G^{r}(E_{1}, E) \Sigma^{<}(E, E') G^{a}(E', E_{2})
+\end{equation}
+For $G^{r}$, the analytic continuation gives
+\begin{equation}
+G^{r}=g^{r}+g^{r} H' G^{r}
+\end{equation}
+\begin{equation}
+G^{r}(E_{1}, E_{2})=g^{r}(E_{1}, E_{2})+\int\frac{dE}{2\pi}\frac{dE'}{2\pi}g^{r}(E_{1}, E) H^{'}(E, E') G^{r}(E', E_{2})
+\label{eq:Gr}
+\end{equation}
+\begin{equation}
+g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
+\end{equation}
+in which, $g^{r}$ is the free propagator of central dot(?). Using Eq. (\ref{eq:part1}), we have
+\begin{equation}
+\begin{split}
+g_{n\sigma}^{r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle_{0} \\
+=&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
+\end{split}
+\end{equation}
+and
+\begin{equation}
+g_{n\sigma}^{r}(E) = \frac{1}{E-(\epsilon_{n}+\sigma B_{0} \cos \theta)+i 0^{+}}
+\end{equation}
+In the spin space \{$d_{\uparrow}^{\dag}$, $d_{\downarrow}^{\dag}$; $d_{\uparrow}$, $d_{\uparrow}$\},
+\begin{equation}
+g^{r}(E)=\left(\begin{array}{cc}
+g_{n\uparrow}^{r}(E) &0 \\
+0 & g_{n\downarrow}^{r}(E)
+\end{array}\right).
+\end{equation}
+$H'$ is given by
+\begin{equation}
+H^{\prime}=\left(\begin{array}{cc}
+0 & \gamma e^{-i \omega t} \\
+\gamma e^{i \omega t} & 0
+\end{array}\right)
+\end{equation}
+we have
+\begin{equation}
+H^{\prime}(E, E')=\left(\begin{array}{cc}
+0 & 2\pi\gamma \delta(E-\omega) \\
+2\pi\gamma \delta(E+\omega) & 0
+\end{array}\right) \delta(E-E').
+\end{equation}
+Substitute these equations into Eq. (\ref{eq:Gr}), we get
+
+
+
+
+
+
+
 \section{Adiabatic regime($\omega$ is small)}
 
 So, the charge current is given by (why? DC?)
