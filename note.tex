@@ -242,6 +242,12 @@ g_{n\sigma}^{r}(E) = \frac{1}{E-(\epsilon_{n}+\sigma B_{0} \cos \theta)+i 0^{+}}
 \end{equation}
 In the spin space \{$d_{\uparrow}^{\dag}$, $d_{\downarrow}^{\dag}$; $d_{\uparrow}$, $d_{\uparrow}$\},
 \begin{equation}
+G^{r}\equiv\left(\begin{array}{cc}
+G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
+G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
+\end{array}\right)
+\end{equation}
+\begin{equation}
 g^{r}(E)=\left(\begin{array}{cc}
 g_{n\uparrow}^{r}(E) &0 \\
 0 & g_{n\downarrow}^{r}(E)
@@ -262,7 +268,31 @@ H^{\prime}(E, E')=\left(\begin{array}{cc}
 \end{array}\right) \delta(E-E').
 \end{equation}
 Substitute these equations into Eq. (\ref{eq:Gr}), we get
-
+\begin{equation}
+\begin{split}
+\left(\begin{array}{cc}
+G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
+G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
+\end{array}\right) = &
+\left(\begin{array}{cc}
+g_{n\uparrow}^{r}(E_{1}) &0 \\
+0 & g_{n\downarrow}^{r}(E_{1})
+\end{array}\right) 2\pi\delta(E_{1}-E_{2})\\
+&+ \int\frac{dE}{2\pi}\frac{dE'}{2\pi}\left(\begin{array}{cc}
+g_{n\uparrow}^{r}(E_{1}) &0 \\
+0 & g_{n\downarrow}^{r}(E_{1})
+\end{array}\right) 2\pi\delta(E_{1}-E)\delta(E-E')\\
+&\times
+\left(\begin{array}{cc}
+0 & 2\pi\gamma \delta(E-\omega) \\
+2\pi\gamma \delta(E+\omega) & 0
+\end{array}\right)
+ \left(\begin{array}{cc}
+G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
+G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
+\end{array}\right)
+\end{split}
+\end{equation}
 
 
 
