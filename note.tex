@@ -85,6 +85,7 @@ Then
 Coupling part
 \begin{equation}
 \sum_{k, n',\sigma', \alpha=L, R}\left[T_{n'k \alpha} C_{k \alpha \sigma'}^{\dag} d_{n'\sigma'}+\mathrm{c.c.}\right, d_{n\sigma}^{\dag}] = \sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}
+\label{eq:part3}
 \end{equation}
 Substitute these three parts into Eq. (\ref{eq:eom1}), we get
 \begin{equation}
@@ -190,7 +191,7 @@ Here, $G^{r,<} \equiv G_{n\sigma',m\sigma}^{r,<}$, and matrix element
 \begin{equation}
 \Sigma_{\alpha,mn}^{\gamma}(t_{1}, t_{2}) = \sum_{k} T_{k\alpha m}^{*}(t_{1}) g_{k\alpha}^{\gamma}(t_{1}, t_{2}) T_{k\alpha n}(t_{2}),
 \end{equation}
-in which, $g_{k\sigma}$ is the free propagator of lead. From Dyson equation, we have (different from Eq. (77) in Chap. II ?)
+in which, $g_{k\sigma}$ is the free propagator of lead, and $\gamma$ is \{>, <, r, a\}. From Dyson equation, we have (different from Eq. (77) in Chap. II ?)
 \begin{equation}
 G^{<}=G^{r} \Sigma^{<} G^{a}
 \end{equation}
@@ -198,43 +199,71 @@ whose Fourier transformation gives
 \begin{equation}
 G^{<}(E_{1},E_{2})=\int\frac{dE}{2\pi}\frac{dE'}{2\pi}G^{r}(E_{1}, E) \Sigma^{<}(E, E') G^{a}(E', E_{2})
 \end{equation}
-For $G^{r}$, the analytic continuation gives
+\section{Calculate $G^{r}$}
+For $G^{r}$, the Dyson equation gives (refer to \cite{Baigeng})
 \begin{equation}
-G^{r}=g^{r}+g^{r} H' G^{r}
+G^{r}(t_{1},t_{2})=G^{0r}(t_{1}-t_{2})+\int dt ~G^{0r}(t_{1}-t) H'(t) G^{r}(t,t_{2})
+\label{eq:dyson-2}
 \end{equation}
-\begin{equation}
-G^{r}(E_{1}, E_{2})=g^{r}(E_{1}, E_{2})+\int\frac{dE}{2\pi}\frac{dE'}{2\pi}g^{r}(E_{1}, E) H^{'}(E, E') G^{r}(E', E_{2})
-\label{eq:Gr}
-\end{equation}
-in which, $g^{r}$ is the free propagator of central dot(?). Using Eq. (\ref{eq:part1}), we have
+in which, $G^{0r}$ is not the free propagator of central dot, but the equilibrium Green’s function when the pumping potential H′ is set to zero, i.e. the hamiltonian is $H-H'$, not $\varepsilon_{n}d_{n\sigma}^{\dag}d_{n\sigma}$. Multiply $e^{i E_{1} t_{1}-i E_{2} t_{2}}$ and integrate on both sides, we have
 \begin{equation}
 \begin{split}
-g_{n\sigma}^{r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle_{0} \\
-=&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
+G^{r}(E_{1}, E_{2})\equiv& \int d t_{1} d t_{2} e^{i E_{1} t_{1}-i E_{2} t_{2}} G^{r}(t_{1}, t_{2}) \\
+=& 2\pi G^{0r}(E_{1})\delta(E_{1}-E_{2}) \\
+&+ \int dt_{1}G^{0r}(t_{1}-t) e^{iE_{1}(t_{1}-t)} H'(t) e^{i(E_{1}-E)t} \iint dtdt_{2} G^{r}(t,t_{2}) e^{iEt-E_{2}t_{2}} \\
+=& 2\pi G^{0r}(E_{1})\delta(E_{1}-E_{2}) + \int \frac{dE}{2\pi}G^{0r}(E_{1}) H'(E_{1}-E) G^{r}(E,E_{2}),
+\end{split}
+\label{eq:Gr}
+\end{equation}
+in which, we inserted the inverse Fourier transformation
+\begin{equation}
+H^{\prime}(t) = \int \frac{dE}{2\pi} e^{-i(E_{1}-E)t} H'(E_{1}-E).
+\end{equation}
+\subsection{Calcualte $G^{0r}$}
+Using Eq. (\ref{eq:part1}) and Eq. (\ref{eq:part3}), we have
+\begin{equation}
+\partial_{t}d_{n\sigma}^{\dag} =i(\epsilon_{n}+\sigma B_{0} \cos \theta) d_{n\sigma}^{\dag} + i\sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}
+\end{equation}
+\begin{equation}
+\partial_{t}d_{n\sigma} =-i(\epsilon_{n}+\sigma B_{0} \cos \theta) d_{n\sigma} - i\sum_{k, \alpha=L, R}T_{k \alpha n}^{*} C_{k \alpha \sigma}^{\dag}
+\end{equation}
+then
+\begin{equation}
+d_{n\sigma}^{\dag}(t) =d_{n\sigma}^{\dag}(0) e^{i(\epsilon_{n}+\sigma B_{0} \cos \theta)t}  + it\sum_{k, \alpha=L, R}T_{k \alpha n} C_{k \alpha \sigma}^{\dag}
+\end{equation}
+\begin{equation}
+d_{n\sigma}(t) =d_{n\sigma}(0)e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta)} - it\sum_{k, \alpha=L, R}T_{k \alpha n}^{*} C_{k \alpha \sigma}
+\end{equation}
+Note $\epsilon_{n}$ is time-dependent, $G^{0r}(t,t')$ depends only on time difference. 
+\begin{equation}
+\begin{split}
+G_{n\sigma}^{0r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle \\
+% =&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
 \end{split}
 \end{equation}
-note $\epsilon_{n}$ is time-dependent, $g^{r}(t,t')$ depends only on time difference, so
+% \begin{equation}
+% g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
+% \end{equation}
+% and
+% \begin{equation}
+% g_{n\sigma}^{r}(E) = \frac{1}{E-(\epsilon_{n}+\sigma B_{0} \cos \theta)+i 0^{+}}
+% \end{equation}
+The hamiltonian $H-H'$ cannot flip spin, so in the spin space \{$d_{\uparrow}^{\dag}$, $d_{\downarrow}^{\dag}$; $d_{\uparrow}$, $d_{\uparrow}$\}, $G^{0r}$ is diagonal
 \begin{equation}
-g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
+G^{0r}(E)=\left(\begin{array}{cc}
+G_{n\uparrow}^{0r}(E) &0 \\
+0 & G_{n\downarrow}^{0r}(E)
+\end{array}\right).
 \end{equation}
-and
-\begin{equation}
-g_{n\sigma}^{r}(E) = \frac{1}{E-(\epsilon_{n}+\sigma B_{0} \cos \theta)+i 0^{+}}
-\end{equation}
-In the spin space \{$d_{\uparrow}^{\dag}$, $d_{\downarrow}^{\dag}$; $d_{\uparrow}$, $d_{\uparrow}$\},
+\subsection{Calcualte $G^{r}$}
+In spin space
 \begin{equation}
 G^{r}\equiv\left(\begin{array}{cc}
 G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
 G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
 \end{array}\right)
 \end{equation}
-\begin{equation}
-g^{r}(E)=\left(\begin{array}{cc}
-g_{n\uparrow}^{r}(E) &0 \\
-0 & g_{n\downarrow}^{r}(E)
-\end{array}\right).
-\end{equation}
-$H'$ is given by
+$H'$ in Eq. (\ref{eq:dyson-2})is given by
 \begin{equation}
 H^{\prime}=\left(\begin{array}{cc}
 0 & \gamma e^{-i \omega t} \\
@@ -243,10 +272,17 @@ H^{\prime}=\left(\begin{array}{cc}
 \end{equation}
 we have
 \begin{equation}
-H^{\prime}(E, E')=\left(\begin{array}{cc}
-0 & \gamma \delta(E-\omega) \\
-\gamma \delta(E+\omega) & 0
-\end{array}\right) 2\pi\delta(E-E').
+\begin{split}
+H^{\prime}(E_{1}-E)&= \int dt e^{i(E_{1}-E)t} H'(t)\\
+&=\left(\begin{array}{cc}
+0 & \gamma\int dt e^{i(E_{1}-E-\omega)t}\\
+\gamma\int dt e^{i(E_{1}-E+\omega)t} & 0
+\end{array}\right) \\
+&=2\pi\gamma\left(\begin{array}{cc}
+0 & \delta(E_{1}-E-\omega)\\
+\delta(E_{1}-E+\omega) & 0
+\end{array}\right)
+\end{split}
 \end{equation}
 Substitute these equations into Eq. (\ref{eq:Gr}), we get
 \begin{equation}
@@ -256,25 +292,25 @@ G_{n\uparrow,m\uparrow}^{r}(E_{1},E_{2}) & G_{n\uparrow,m\downarrow}^{r}(E_{1},E
 G_{n\downarrow,m\uparrow}^{r}(E_{1},E_{2}) & G_{n\downarrow,m\downarrow}^{r}(E_{1},E_{2})
 \end{array}\right) = &
 \left(\begin{array}{cc}
-g_{n\uparrow}^{r}(E_{1}) &0 \\
-0 & g_{n\downarrow}^{r}(E_{1})
+G_{n\uparrow}^{0r}(E_{1}) &0 \\
+0 & G_{n\downarrow}^{0r}(E_{1})
 \end{array}\right) 2\pi\delta(E_{1}-E_{2})\\
-&+ \int\frac{dE}{2\pi}\frac{dE'}{2\pi}\left(\begin{array}{cc}
-g_{n\uparrow}^{r}(E_{1}) &0 \\
-0 & g_{n\downarrow}^{r}(E_{1})
-\end{array}\right) 2\pi\delta(E_{1}-E)2\pi\delta(E-E')\\
+&+ \gamma\int dE\left(\begin{array}{cc}
+G_{n\uparrow}^{0r}(E_{1}) &0 \\
+0 & G_{n\downarrow}^{0r}(E_{1})
+\end{array}\right) \\
 &\times
 \left(\begin{array}{cc}
-0 & \gamma \delta(E-\omega) \\
-\gamma \delta(E+\omega) & 0
+0 & \delta(E_{1}-E-\omega) \\
+\delta(E_{1}-E+\omega) & 0
 \end{array}\right)
  \left(\begin{array}{cc}
 G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
 G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
 \end{array}\right) \\
 =&\left(\begin{array}{cc}
-g_{n\uparrow}^{r}(E_{1}) &0 \\
-0 & g_{n\downarrow}^{r}(E_{1})
+G_{n\uparrow}^{0r}(E_{1}) &0 \\
+0 & G_{n\downarrow}^{0r}(E_{1})
 \end{array}\right) 2\pi\delta(E_{1}-E_{2})\\
 &+ \left(\begin{array}{cc}
 G_{1}(E_{1},E_{2}) & G_{2}(E_{1},E_{2}) \\
@@ -282,77 +318,73 @@ G_{3}(E_{1},E_{2}) & G_{4}(E_{1},E_{2})
 \end{array}\right).
 \end{split}
 \end{equation}
-In which $G_{1}, G_{2}, G_{3}, G_{4}$ are
+where we have omitted the independent variables $(E, E_{2})$ of $G_{n \sigma, m\sigma'}^{r}$ for sake of convenience. In the above equations $G_{1}, G_{2}, G_{3}, G_{4}$ are
 \begin{equation}
-G_{1}(E_{1},E_{2}) = \int dE dE' g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-E)\gamma\delta(E-\omega)\delta(E-E') G_{n \downarrow, m \uparrow}^{r}(E',E_{2})
+G_{1}(E_{1},E_{2}) = \gamma \int dE G_{n \uparrow}^{0r}\left(E_{1}\right) \delta(E_{1}-E-\omega) G_{n \downarrow, m \uparrow}^{r}(E,E_{2})
 \end{equation}
 \begin{equation}
-G_{2}(E_{1},E_{2}) = \int dE dE'  g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-E) \gamma\delta(E-\omega)\delta(E-E') G_{n \downarrow, m \downarrow}^{r}(E',E_{2})
+G_{2}(E_{1},E_{2}) = \gamma\int dE G_{n \uparrow}^{0r} \left(E_{1}\right)  \delta(E_{1}-E-\omega) G_{n \downarrow, m \downarrow}^{r}(E,E_{2})
 \end{equation}
 \begin{equation}
-G_{3}(E_{1},E_{2}) = \int dE dE'  g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-E)  \gamma\delta(E+\omega) \delta(E-E') G_{n \uparrow, m \uparrow}^{r}(E',E_{2})
+G_{3}(E_{1},E_{2}) =  \gamma \int dE G_{n \downarrow}^{0r}\left(E_{1}\right)  \delta(E_{1}-E+\omega) G_{n \uparrow, m \uparrow}^{r}(E,E_{2})
 \end{equation}
 \begin{equation}
-G_{4}(E_{1},E_{2}) = \int dE dE'  g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-E) \gamma\delta(E+\omega) \delta(E-E') G_{n \uparrow, m \downarrow}^{r}(E',E_{2})
+G_{4}(E_{1},E_{2}) = \gamma\int dE G_{n \uparrow}^{0r}\left(E_{1}\right)  \delta(E_{1}-E+\omega) G_{n \uparrow, m \downarrow}^{r}(E,E_{2})
 \end{equation}
 So, the $G_{1}$ term
 \begin{equation}
 \begin{split}
-G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) &= g_{n \uparrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) + G_{1}\left(E_{1}, E_{2}\right) \\
-&= 2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right)
+G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) &= G_{n \uparrow}^{0r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) + G_{1}\left(E_{1}, E_{2}\right) \\
+&= 2 \pi G_{n \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma G_{n \uparrow}^{0r}\left(E_{1}\right)  G_{n \downarrow, m \uparrow}^{r}\left(E_{1}-\omega, E_{2}\right)
 \end{split}
 \end{equation}
 The $G_{2}$ term
 \begin{equation}
 \begin{split}
 G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) =& G_{2}\left(E_{1}, E_{2}\right) \\
-=& \int dE'\gamma g_{n \uparrow}^{r} \left(E_{1}\right)  G_{n \downarrow, m \downarrow}^{r}(E',E_{2}) \left[ \int dE   \delta(E_{1}-E) \delta(E-\omega)\delta(E-E')\right] \\
-=& \int dE'\gamma g_{n \uparrow}^{r} \left(E_{1}\right)  G_{n \downarrow, m \downarrow}^{r}(E',E_{2}) \left[ \delta(E_{1}-E') \delta(E'-\omega)\right] \\
-=& \gamma g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \downarrow}^{r}(E_{1},E_{2})
+=& \gamma G_{n \uparrow}^{0r} \left(E_{1}\right) G_{n \downarrow, m \downarrow}^{r}(E_{1}-\omega,E_{2})
 \end{split}
 \end{equation}
 The $G_{3}$ term
 \begin{equation}
 \begin{split}
 G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) &= G_{3}\left(E_{1}, E_{2}\right) \\
-&= \gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2})
+&= \gamma G_{n \downarrow}^{0r} \left(E_{1}\right) G_{n \uparrow, m \uparrow}^{r}(E_{1}+\omega,E_{2})
 \end{split}
 \end{equation}
 and the $G_{4}$ term
 \begin{equation}
 \begin{split}
 G_{n \downarrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) &= g_{n \downarrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) +G_{4}\left(E_{1}, E_{2}\right)\\
-&= 2 \pi g_{n \downarrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}(E_{1})\delta(E_{1}+\omega) G_{n \uparrow, m \downarrow}^{r}(E_{1}, E_{2})
+&= 2 \pi G_{n \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma G_{n \uparrow}^{0r}(E_{1}) G_{n \uparrow, m \downarrow}^{r}(E_{1}+\omega, E_{2})
 \end{split}
 \end{equation}
-After collection terms, we get
+After collecting terms, we get
 \begin{equation}
 \begin{split}
-G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) =& 2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) \\
-&\times\gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2}) \\
-=& \frac{2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) &= 2 \pi G_{n \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma G_{n \uparrow}^{0r}\left(E_{1}\right) \gamma G_{n\downarrow}^{0r}(E_{1}-\omega)G_{n \uparrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) \\
+&=\frac{2 \pi G_{n \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} G_{n \uparrow}^{0r}\left(E_{1}\right) G_{n \downarrow}^{0r}\left(E_{1}-\omega\right)}
 \end{split}
 \end{equation}
 and
 \begin{equation}
-G_{n \downarrow, m \downarrow}^{r}(E_{1}, E_{2}) = \frac{2 \pi g_{n \downarrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+G_{n \downarrow, m \downarrow}^{r}(E_{1}, E_{2}) = \frac{2 \pi G_{n \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} G_{n \uparrow}^{0r}\left(E_{1}\right) G_{n \uparrow}^{0r}\left(E_{1}+\omega\right)}
 \end{equation}
 and
 \begin{equation}
 \begin{split}
-G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) &=  \gamma g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \downarrow}^{r}(E_{1},E_{2}) \\
-&=\frac{2 \pi \gamma g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) \delta\left(E_{1}-E_{2}\right) }{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) &=  \gamma G_{n \uparrow}^{0r} \left(E_{1}\right)  G_{n \downarrow, m \downarrow}^{r}(E_{1}-\omega,E_{2}) \\
+&=\frac{2 \pi \gamma G_{n \uparrow}^{0r}\left(E_{1}\right) G_{n \downarrow}^{0r}\left(E_{1}-\omega\right) \delta\left(E_{1}-\omega-E_{2}\right) }{1-\gamma^{2} G_{n \uparrow}^{0r}\left(E_{1}-\omega\right) G_{n \uparrow}^{0r}\left(E_{1}\right) }
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
-G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) &= \gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2}) \\
-&=\frac{2 \pi\gamma g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega)  \delta\left(E_{1}-E_{2} \right) }{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) &= \gamma G_{n \downarrow}^{0r} \left(E_{1}\right) G_{n \uparrow, m \uparrow}^{r}(E_{1}+\omega,E_{2}) \\
+&=\frac{2 \pi\gamma G_{n \uparrow}^{0r}\left(E_{1}+\omega\right) G_{n \downarrow}^{0r} \left(E_{1}\right) \delta(E_{1}+\omega-E_{2}) }{1-\gamma^{2} G_{n \uparrow}^{0r}\left(E_{1}+\omega\right) G_{n \downarrow}^{0r}\left(E_{1}\right)}
 \end{split}
 \end{equation}
-
-
-
+\section{Calcualte $\Sigma_{\alpha,mn}$}
+In Eq. (\ref{eq:})
 
 
 
@@ -398,6 +430,8 @@ d Q_{\alpha \sigma}(t) / d t=q \int \frac{d E}{2 \pi}\left(-\partial_{E} f\right
 Y, K, Kato. Observation of the Spin Hall Effect in Semiconductors[J]. Science, 2004.
 \bibitem{Jauho}
 Antti-Pekka Jauho, Quantum Kinetics in Transport and Optics of Semiconductors, P188.
+\bibitem{Baigeng}
+PRB 67, 092408 (2003).
 \end{thebibliography}
 
 \end{CJK}
