@@ -179,27 +179,7 @@ I_{\alpha\sigma}(t) &=-\frac{e}{\hbar} \int d t_{1} \operatorname{Tr}\left[G^{r}
 &\left.+G^{<}\left(t, t_{1}\right) \Sigma_{\alpha}^{a}\left(t_{1}, t\right)\right]+h . c .
 \end{aligned}
 \end{equation}
-Dyson equation:
-\begin{equation}
-G = g + g\Sigma G
-\end{equation}
-Note the double Fourier transformation, if
-\begin{equation}
-F(t)=\int d t_{1} G_{1}\left(t, t_{1}\right) G_{2}\left(t_{1}, t\right)
-\end{equation}
-then
-\begin{equation}
-F(\omega)=\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} G_{1}\left(E+\omega, E^{\prime}\right) G_{2}\left(E^{\prime}, E\right).
-\end{equation}
-If
-\begin{equation}
-F\left(t_{1}, t_{2}\right)=\int d t G_{1}\left(t_{1}, t\right) G_{2}\left(t, t_{2}\right),
-\end{equation}
-then
-\begin{equation}
-F\left(E_{1}, E_{2}\right)=\int\frac{d E}{2\pi} G_{1}\left(E_{1}, E\right) G_{2}\left(E, E_{2}\right).
-\end{equation}
-Following Eq. (224) in WangJian's note, its Fourier transformation is
+Following Eq. (224) in WangJ's note, its Fourier transformation is
 \begin{equation}
 \begin{split}
 I_{\alpha\sigma}(\omega)=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr}\left[&G^{r}\left(E+\omega, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) \\
@@ -210,7 +190,7 @@ Here, $G^{r,<} \equiv G_{n\sigma',m\sigma}^{r,<}$, and matrix element
 \begin{equation}
 \Sigma_{\alpha,mn}^{\gamma}(t_{1}, t_{2}) = \sum_{k} T_{k\alpha m}^{*}(t_{1}) g_{k\alpha}^{\gamma}(t_{1}, t_{2}) T_{k\alpha n}(t_{2}),
 \end{equation}
-in which, $g_{k\sigma}$ is the free propagator of lead. From Dyson equation, we have (different from Eq. (77) in Chap. II ???)
+in which, $g_{k\sigma}$ is the free propagator of lead. From Dyson equation, we have (different from Eq. (77) in Chap. II ?)
 \begin{equation}
 G^{<}=G^{r} \Sigma^{<} G^{a}
 \end{equation}
@@ -226,15 +206,16 @@ G^{r}=g^{r}+g^{r} H' G^{r}
 G^{r}(E_{1}, E_{2})=g^{r}(E_{1}, E_{2})+\int\frac{dE}{2\pi}\frac{dE'}{2\pi}g^{r}(E_{1}, E) H^{'}(E, E') G^{r}(E', E_{2})
 \label{eq:Gr}
 \end{equation}
-\begin{equation}
-g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
-\end{equation}
 in which, $g^{r}$ is the free propagator of central dot(?). Using Eq. (\ref{eq:part1}), we have
 \begin{equation}
 \begin{split}
 g_{n\sigma}^{r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle_{0} \\
 =&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
 \end{split}
+\end{equation}
+note $\epsilon_{n}$ is time-dependent, $g^{r}(t,t')$ depends only on time difference, so
+\begin{equation}
+g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
 \end{equation}
 and
 \begin{equation}
@@ -263,16 +244,16 @@ H^{\prime}=\left(\begin{array}{cc}
 we have
 \begin{equation}
 H^{\prime}(E, E')=\left(\begin{array}{cc}
-0 & 2\pi\gamma \delta(E-\omega) \\
-2\pi\gamma \delta(E+\omega) & 0
-\end{array}\right) \delta(E-E').
+0 & \gamma \delta(E-\omega) \\
+\gamma \delta(E+\omega) & 0
+\end{array}\right) 2\pi\delta(E-E').
 \end{equation}
 Substitute these equations into Eq. (\ref{eq:Gr}), we get
 \begin{equation}
 \begin{split}
 \left(\begin{array}{cc}
-G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
-G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
+G_{n\uparrow,m\uparrow}^{r}(E_{1},E_{2}) & G_{n\uparrow,m\downarrow}^{r}(E_{1},E_{2}) \\
+G_{n\downarrow,m\uparrow}^{r}(E_{1},E_{2}) & G_{n\downarrow,m\downarrow}^{r}(E_{1},E_{2})
 \end{array}\right) = &
 \left(\begin{array}{cc}
 g_{n\uparrow}^{r}(E_{1}) &0 \\
@@ -281,24 +262,84 @@ g_{n\uparrow}^{r}(E_{1}) &0 \\
 &+ \int\frac{dE}{2\pi}\frac{dE'}{2\pi}\left(\begin{array}{cc}
 g_{n\uparrow}^{r}(E_{1}) &0 \\
 0 & g_{n\downarrow}^{r}(E_{1})
-\end{array}\right) 2\pi\delta(E_{1}-E)\delta(E-E')\\
+\end{array}\right) 2\pi\delta(E_{1}-E)2\pi\delta(E-E')\\
 &\times
 \left(\begin{array}{cc}
-0 & 2\pi\gamma \delta(E-\omega) \\
-2\pi\gamma \delta(E+\omega) & 0
+0 & \gamma \delta(E-\omega) \\
+\gamma \delta(E+\omega) & 0
 \end{array}\right)
  \left(\begin{array}{cc}
 G_{n\uparrow,m\uparrow}^{r} & G_{n\uparrow,m\downarrow}^{r} \\
 G_{n\downarrow,m\uparrow}^{r} & G_{n\downarrow,m\downarrow}^{r}
-\end{array}\right)
+\end{array}\right) \\
+=&\left(\begin{array}{cc}
+g_{n\uparrow}^{r}(E_{1}) &0 \\
+0 & g_{n\downarrow}^{r}(E_{1})
+\end{array}\right) 2\pi\delta(E_{1}-E_{2})\\
+&+ \left(\begin{array}{cc}
+G_{1}(E_{1},E_{2}) & G_{2}(E_{1},E_{2}) \\
+G_{3}(E_{1},E_{2}) & G_{4}(E_{1},E_{2})
+\end{array}\right).
 \end{split}
+\end{equation}
+In which $G_{1}, G_{2}, G_{3}, G_{4}$ are
+\begin{equation}
+G_{1}(E_{1},E_{2}) = \int dE dE' g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-E)\gamma\delta(E-\omega)\delta(E-E') G_{n \downarrow, m \uparrow}^{r}(E',E_{2})
+\end{equation}
+\begin{equation}
+G_{2}(E_{1},E_{2}) = \int dE dE'  g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-E) \gamma\delta(E-\omega)\delta(E-E') G_{n \downarrow, m \downarrow}^{r}(E',E_{2})
+\end{equation}
+\begin{equation}
+G_{3}(E_{1},E_{2}) = \int dE dE'  g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-E)  \gamma\delta(E+\omega) \delta(E-E') G_{n \uparrow, m \uparrow}^{r}(E',E_{2})
+\end{equation}
+\begin{equation}
+G_{4}(E_{1},E_{2}) = \int dE dE'  g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-E) \gamma\delta(E+\omega) \delta(E-E') G_{n \uparrow, m \downarrow}^{r}(E',E_{2})
+\end{equation}
+So,
+\begin{equation}
+G_{n \downarrow, m \uparrow}^{r}(E^{\prime}, E_{2}) = g_{n \uparrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) + G_{1}\left(E_{1}, E_{2}\right)
+\end{equation}
+\begin{equation}
+G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) = G_{2}\left(E_{1}, E_{2}\right)
+\end{equation}
+\begin{equation}
+G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) = G_{3}\left(E_{1}, E_{2}\right)
+\end{equation}
+\begin{equation}
+G_{n \downarrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) = g_{n \downarrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) +G_{4}\left(E_{1}, E_{2}\right)
 \end{equation}
 
 
 
-
-
-
+\section{Appendix}
+\subsection{Double Fourier transformation}
+Note the double Fourier transformation, if
+\begin{equation}
+F(t)=\int d t_{1} G_{1}\left(t, t_{1}\right) G_{2}\left(t_{1}, t\right)
+\end{equation}
+then
+\begin{equation}
+F(\omega)=\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} G_{1}\left(E+\omega, E^{\prime}\right) G_{2}\left(E^{\prime}, E\right).
+\end{equation}
+If
+\begin{equation}
+F\left(t_{1}, t_{2}\right)=\int d t G_{1}\left(t_{1}, t\right) G_{2}\left(t, t_{2}\right),
+\end{equation}
+then
+\begin{equation}
+F\left(E_{1}, E_{2}\right)=\int\frac{d E}{2\pi} G_{1}\left(E_{1}, E\right) G_{2}\left(E, E_{2}\right).
+\end{equation}
+If $F(t_{1}, t_{2})$ depends only on $t_{1}-t_{2}$,
+\begin{equation}
+F\left(E_{1}, E_{2}\right)=2\pi F\left(E_{1}\right)\delta(E_{1}-E_{2})
+\end{equation}
+Note that
+\begin{equation}
+\int_{-\infty}^{\infty} \delta(x) d x=1.
+\end{equation}
+\begin{equation}
+\int_{a-\epsilon}^{a+\epsilon} f(x) \delta(x-a) d x=f(a)
+\end{equation}
 \section{Adiabatic regime($\omega$ is small)}
 
 So, the charge current is given by (why? DC?)
