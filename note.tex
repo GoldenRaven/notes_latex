@@ -295,19 +295,64 @@ G_{3}(E_{1},E_{2}) = \int dE dE'  g_{n \downarrow}^{r}\left(E_{1}\right) \delta(
 \begin{equation}
 G_{4}(E_{1},E_{2}) = \int dE dE'  g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-E) \gamma\delta(E+\omega) \delta(E-E') G_{n \uparrow, m \downarrow}^{r}(E',E_{2})
 \end{equation}
-So,
+So, the $G_{1}$ term
 \begin{equation}
-G_{n \downarrow, m \uparrow}^{r}(E^{\prime}, E_{2}) = g_{n \uparrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) + G_{1}\left(E_{1}, E_{2}\right)
+\begin{split}
+G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) &= g_{n \uparrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) + G_{1}\left(E_{1}, E_{2}\right) \\
+&= 2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right)
+\end{split}
+\end{equation}
+The $G_{2}$ term
+\begin{equation}
+\begin{split}
+G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) =& G_{2}\left(E_{1}, E_{2}\right) \\
+=& \int dE'\gamma g_{n \uparrow}^{r} \left(E_{1}\right)  G_{n \downarrow, m \downarrow}^{r}(E',E_{2}) \left[ \int dE   \delta(E_{1}-E) \delta(E-\omega)\delta(E-E')\right] \\
+=& \int dE'\gamma g_{n \uparrow}^{r} \left(E_{1}\right)  G_{n \downarrow, m \downarrow}^{r}(E',E_{2}) \left[ \delta(E_{1}-E') \delta(E'-\omega)\right] \\
+=& \gamma g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \downarrow}^{r}(E_{1},E_{2})
+\end{split}
+\end{equation}
+The $G_{3}$ term
+\begin{equation}
+\begin{split}
+G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) &= G_{3}\left(E_{1}, E_{2}\right) \\
+&= \gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2})
+\end{split}
+\end{equation}
+and the $G_{4}$ term
+\begin{equation}
+\begin{split}
+G_{n \downarrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) &= g_{n \downarrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) +G_{4}\left(E_{1}, E_{2}\right)\\
+&= 2 \pi g_{n \downarrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}(E_{1})\delta(E_{1}+\omega) G_{n \uparrow, m \downarrow}^{r}(E_{1}, E_{2})
+\end{split}
+\end{equation}
+After collection terms, we get
+\begin{equation}
+\begin{split}
+G_{n \uparrow, m \uparrow}^{r}(E_{1}, E_{2}) =& 2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) \\
+&\times\gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2}) \\
+=& \frac{2 \pi g_{n \uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+\end{split}
+\end{equation}
+and
+\begin{equation}
+G_{n \downarrow, m \downarrow}^{r}(E_{1}, E_{2}) = \frac{2 \pi g_{n \downarrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+\end{equation}
+and
+\begin{equation}
+\begin{split}
+G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) &=  \gamma g_{n \uparrow}^{r} \left(E_{1}\right) \delta(E_{1}-\omega) G_{n \downarrow, m \downarrow}^{r}(E_{1},E_{2}) \\
+&=\frac{2 \pi \gamma g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega) \delta\left(E_{1}-E_{2}\right) }{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \uparrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+\end{split}
 \end{equation}
 \begin{equation}
-G_{n \uparrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) = G_{2}\left(E_{1}, E_{2}\right)
+\begin{split}
+G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) &= \gamma g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega) G_{n \uparrow, m \uparrow}^{r}(E_{1},E_{2}) \\
+&=\frac{2 \pi\gamma g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r} \left(E_{1}\right) \delta(E_{1}+\omega)  \delta\left(E_{1}-E_{2} \right) }{1-\gamma^{2} g_{n \uparrow}^{r}\left(E_{1}\right) g_{n \downarrow}^{r}\left(E_{1}\right) \delta(E_{1}-\omega)\delta(E_{1}+\omega)}
+\end{split}
 \end{equation}
-\begin{equation}
-G_{n \downarrow, m \uparrow}^{r}\left(E_{1}, E_{2}\right) = G_{3}\left(E_{1}, E_{2}\right)
-\end{equation}
-\begin{equation}
-G_{n \downarrow, m \downarrow}^{r}\left(E_{1}, E_{2}\right) = g_{n \downarrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) +G_{4}\left(E_{1}, E_{2}\right)
-\end{equation}
+
+
+
 
 
 
