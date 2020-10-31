@@ -7,7 +7,7 @@
 \usepackage{caption}
 \usepackage{bm}
 \usepackage{geometry}
-\geometry{a4paper,scale=0.8}
+\geometry{a4paper,scale=0.9}
 
 \captionsetup{font={scriptsize}}
 
@@ -185,8 +185,8 @@ I_{\alpha\sigma}(t) &=-\frac{e}{\hbar} \int d t_{1} \operatorname{Tr}\left[G^{r}
 Following Eq. (224) in WangJ's note, its Fourier transformation is
 \begin{equation}
 \begin{split}
-I_{\alpha\sigma}(\omega)=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr}\left[&G^{r}\left(E+\omega, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) \\
-&+ G^{<}(E+\omega, E')\Sigma_{\alpha}^{a}(E', E) ] + c.c.
+I_{\alpha\sigma}(\omega_{1})=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr}\left[&G^{r}\left(E+\omega_{1}, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) \\
+&+ G^{<}(E+\omega_{1}, E')\Sigma_{\alpha}^{a}(E', E) ] + c.c.
 \end{split}
 \end{equation}
 Here, $G^{r,<} \equiv G_{n\sigma',m\sigma}^{r,<}$, notation Tr means sum over QD level index $n$, and matrix element
@@ -345,7 +345,7 @@ G_{2}(E_{1},E_{2}) = \gamma\int dE G_{ \uparrow}^{0r} \left(E_{1}\right)  \delta
 G_{3}(E_{1},E_{2}) =  \gamma \int dE G_{ \downarrow}^{0r}\left(E_{1}\right)  \delta(E_{1}-E+\omega) G_{ \uparrow, \uparrow}^{r}(E,E_{2})
 \end{equation}
 \begin{equation}
-G_{4}(E_{1},E_{2}) = \gamma\int dE G_{ \uparrow}^{0r}\left(E_{1}\right)  \delta(E_{1}-E+\omega) G_{ \uparrow, \downarrow}^{r}(E,E_{2})
+G_{4}(E_{1},E_{2}) = \gamma\int dE G_{ \downarrow}^{0r}\left(E_{1}\right)  \delta(E_{1}-E+\omega) G_{ \uparrow, \downarrow}^{r}(E,E_{2})
 \end{equation}
 So, the $G_{1}$ term
 \begin{equation}
@@ -372,7 +372,7 @@ and the $G_{4}$ term
 \begin{equation}
 \begin{split}
 G_{ \downarrow, \downarrow}^{r}\left(E_{1}, E_{2}\right) &= g_{ \downarrow}^{r}\left(E_{1}\right) 2 \pi \delta\left(E_{1}-E_{2}\right) +G_{4}\left(E_{1}, E_{2}\right)\\
-&= 2 \pi G_{ \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma G_{ \uparrow}^{0r}(E_{1}) G_{ \uparrow, \downarrow}^{r}(E_{1}+\omega, E_{2})
+&= 2 \pi G_{ \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right) + \gamma G_{ \downarrow}^{0r}(E_{1}) G_{ \uparrow, \downarrow}^{r}(E_{1}+\omega, E_{2})
 \end{split}
 \end{equation}
 After collecting terms, we get
@@ -384,13 +384,13 @@ G_{ \uparrow, \uparrow}^{r}(E_{1}, E_{2}) &= 2 \pi G_{ \uparrow}^{0r}\left(E_{1}
 \end{equation}
 and
 \begin{equation}
-G_{ \downarrow, \downarrow}^{r}(E_{1}, E_{2}) = \frac{2 \pi G_{ \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \uparrow}^{0r}\left(E_{1}+\omega\right)}
+G_{ \downarrow, \downarrow}^{r}(E_{1}, E_{2}) = \frac{2 \pi G_{ \downarrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E_{2}\right)}{1-\gamma^{2} G_{ \downarrow}^{0r}\left(E_{1}\right) G_{ \uparrow}^{0r}\left(E_{1}+\omega\right)}
 \end{equation}
 and
 \begin{equation}
 \begin{split}
 G_{ \uparrow, \downarrow}^{r}\left(E_{1}, E_{2}\right) &=  \gamma G_{ \uparrow}^{0r} \left(E_{1}\right)  G_{ \downarrow, \downarrow}^{r}(E_{1}-\omega,E_{2}) \\
-&=\frac{2 \pi \gamma G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right) \delta\left(E_{1}-\omega-E_{2}\right) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}-\omega\right) G_{ \uparrow}^{0r}\left(E_{1}\right) }
+&=\frac{2 \pi \gamma G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right) \delta\left(E_{1}-\omega-E_{2}\right) }{1-\gamma^{2} G_{ \downarrow}^{0r}\left(E_{1}-\omega\right) G_{ \uparrow}^{0r}\left(E_{1}\right) }
 \end{split}
 \end{equation}
 \begin{equation}
@@ -418,7 +418,26 @@ The linewidth function $\Gamma$ is defined as
 \begin{equation}
 \Gamma_{\alpha}(E) \equiv 2 \pi \sum_{k} T_{k \alpha}^{*} T_{k \alpha} \delta\left(E-\epsilon_{k}\right),
 \end{equation}
-thus we have $\Sigma_{\sigma}$, which is a number in spin space, not a matrix, since $\Sigma^{<}$ is independent of spin $\sigma$.
+thus we have $\Sigma_{\sigma}$, which is a number in spin space, not a matrix, since $\Sigma^{<}$ is independent of spin $\sigma$. Similarly,
+\begin{equation}
+\Sigma_{\alpha\sigma}^{a}(E_{1},E_{2}) =2\pi \Sigma_{\alpha\sigma}^{a}(E_{1})\delta(E_{1}-E_{2}),
+\end{equation}
+and the retarted(advanced) self-energy is (?)
+\begin{equation}
+\Sigma_{\alpha\sigma}^{r,a}(E)=\Lambda_{\alpha}(E) \mp \frac{i}{2}\Gamma_{\alpha}(E),
+\end{equation}
+since
+\begin{equation}
+\Sigma_{\alpha\sigma}^{a}(E)=[\Sigma_{\alpha\sigma}^{r}(E)]^{*}
+\end{equation}
+and
+\begin{equation}
+\begin{split}
+\Sigma_{\alpha\sigma}^{a}(E)-\Sigma_{\alpha\sigma}^{r}(E)&=i \Gamma_{\alpha\sigma}(E) \\
+& = 2i\rm{Im}\{\Sigma_{\alpha\sigma}^{a}(E)\}.
+\end{split}
+\end{equation}
+
 \subsection{Calculate $G^{a}$}
 We have relation
 \begin{equation}
@@ -488,15 +507,14 @@ So, the matrix element of $G^{<}$ is
 \begin{split}
 G^{<}\left(E_{1}, E_{2}\right) =
 \left(\begin{array}{cc}
-G_{11} & G_{12} \\
-G_{21} & G_{22}
+G_{11}^{<} & G_{12}^{<} \\
+G_{21}^{<} & G_{22}^{<}
 \end{array}\right)
 \end{split}
 \end{equation}
-
 \begin{equation}
 \begin{split}
-G_{11}&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) \frac{2 \pi G_{ \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E\right)}{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right)} \times 
+G_{11}^{<}(E_{1},E_{2})&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) \frac{2 \pi G_{ \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E\right)}{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right)} \times 
 \frac{2 \pi G_{ \uparrow}^{0a}\left(E\right) \delta\left(E-E_{2}\right)} {1-\gamma^{2} G_{ \uparrow}^{0a}\left(E\right) G_{ \downarrow}^{0a}\left(E-\omega\right)} \\
 &\quad+ \int \frac{d E}{2 \pi} i f(E) \Gamma(E) \frac{2 \pi\gamma G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r} \left(E_{1}\right) \delta(E_{1}+\omega-E) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r}\left(E_{1}\right)} \times
 \frac{2 \pi\gamma G_{ \uparrow}^{0a}\left(E+\omega\right) G_{ \downarrow}^{0a} \left(E\right) \delta(E+\omega-E_{2}) }{1-\gamma^{2} G_{ \uparrow}^{0a}\left(E+\omega\right) G_{ \downarrow}^{0a}\left(E\right)} \\
@@ -506,52 +524,101 @@ G_{11}&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) \frac{2 \pi G_{ \uparrow}^{0r}\l
 \frac{2 \pi\gamma G_{ \uparrow}^{0a}\left(E_{1}+2\omega\right) G_{ \downarrow}^{0a} \left(E_{1}+\omega\right) \delta(E_{1}+2\omega-E_{2}) }{1-\gamma^{2} G_{ \uparrow}^{0a}\left(E_{1}+2\omega\right) G_{ \downarrow}^{0a}\left(E_{1}+\omega\right)}
 \end{split}
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-
-\section{Appendix}
-\subsection{Double Fourier transformation}
-Note the double Fourier transformation, if
+\section{Spin-up current}
+Define
 \begin{equation}
-F(t)=\int d t_{1} G_{1}\left(t, t_{1}\right) G_{2}\left(t_{1}, t\right)
+g_{\sigma}^{r,a}(E) \equiv \frac{ G_{\sigma}^{0r,a}(E)} {1-\gamma^{2} G_{\sigma}^{0r,a}(E) G_{\bar{\sigma}}^{0r,a}(E+\bar{\sigma}\omega)},
 \end{equation}
-then
+then we can write
 \begin{equation}
-F(\omega)=\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} G_{1}\left(E+\omega, E^{\prime}\right) G_{2}\left(E^{\prime}, E\right).
+\begin{split}
+G_{11}^{<}(E_{1},E_{2})&= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}(E_{1}) \times 2 \pi \delta\left(E_{1}-E_{2}\right) g_{\uparrow}^{a}(E_{1}) \\
+&\quad+ i f(E_{1}+\omega) \Gamma(E_{1}+\omega) \gamma g_{\uparrow}^{r}(E_{1}+\omega) G_{\downarrow}^{0r}(E_{1}) \times 2 \pi\gamma g_{\uparrow}^{a}(E_{1}+2\omega) G_{\downarrow}^{0a}(E_{1}+\omega) \delta(E_{1} + 2\omega -E_{2}),
+\end{split}
 \end{equation}
-If
+and
 \begin{equation}
-F\left(t_{1}, t_{2}\right)=\int d t G_{1}\left(t_{1}, t\right) G_{2}\left(t, t_{2}\right),
-\end{equation}
-then
-\begin{equation}
-F\left(E_{1}, E_{2}\right)=\int\frac{d E}{2\pi} G_{1}\left(E_{1}, E\right) G_{2}\left(E, E_{2}\right).
-\end{equation}
-If $F(t_{1}, t_{2})$ depends only on $t_{1}-t_{2}$,
-\begin{equation}
-F\left(E_{1}, E_{2}\right)=2\pi F\left(E_{1}\right)\delta(E_{1}-E_{2})
-\end{equation}
-Note that
-\begin{equation}
-\int_{-\infty}^{\infty} \delta(x) d x=1.
+G_{\uparrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
 \end{equation}
 \begin{equation}
-\int_{a-\epsilon}^{a+\epsilon} f(x) \delta(x-a) d x=f(a)
+G_{\downarrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi g_{\downarrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
 \end{equation}
-\section{Adiabatic regime($\omega$ is small)}
-
-So, the charge current is given by (why? DC?)
 \begin{equation}
-d Q_{\alpha \sigma}(t) / d t=q \int \frac{d E}{2 \pi}\left(-\partial_{E} f\right)\left[\Gamma_{\alpha} \mathbf{G}^{r}(t) \mathbf{\Delta} \mathbf{G}^{a}(t)\right]_{\sigma \sigma}
+G_{\uparrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi \gamma G_{\uparrow}^{0r}(E_{1}) g_{\downarrow}^{r}(E_{1}-\omega) \delta(E_{1}-\omega-E_{2}).
 \end{equation}
+\begin{equation}
+G_{\downarrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi\gamma G_{\downarrow}^{0r}(E_{1})g_{\uparrow}^{r}(E_{1}+\omega) \delta(E_{1}+\omega-E_{2}).
+\end{equation}
+
+The spin-up current is
+\begin{equation}
+\begin{split}
+I_{\alpha\uparrow,\uparrow}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \left[G_{\uparrow,\uparrow}^{r}\left(E+\omega_{1}, E^{\prime}\right) 2\pi if(E')\Gamma_{\alpha}(E')\delta(E^{\prime}- E) \\
+&\qquad\qquad\qquad\qquad + G_{11}^{<}(E+\omega_{1}, E')2\pi\Sigma_{\alpha}^{a}(E')\delta(E'-E) ] + c.c. \\
+&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi}  \left[G_{\uparrow,\uparrow}^{r}\left(E+\omega_{1}, E\right) if(E)\Gamma_{\alpha}(E) \\
+&\qquad\qquad\qquad + G_{11}^{<}(E+\omega_{1}, E)\Sigma_{\alpha}^{a}(E) ] + c.c. \\
+\end{split}
+\end{equation}
+Assume (?)
+\begin{equation}
+\Sigma_{\alpha}^{a}(E) = \frac{i}{2}\Gamma_{\alpha}(E)
+\end{equation}
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+% \section{Appendix}
+% \subsection{Double Fourier transformation}
+% Note the double Fourier transformation, if
+% \begin{equation}
+% F(t)=\int d t_{1} G_{1}\left(t, t_{1}\right) G_{2}\left(t_{1}, t\right)
+% \end{equation}
+% then
+% \begin{equation}
+% F(\omega)=\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} G_{1}\left(E+\omega, E^{\prime}\right) G_{2}\left(E^{\prime}, E\right).
+% \end{equation}
+% If
+% \begin{equation}
+% F\left(t_{1}, t_{2}\right)=\int d t G_{1}\left(t_{1}, t\right) G_{2}\left(t, t_{2}\right),
+% \end{equation}
+% then
+% \begin{equation}
+% F\left(E_{1}, E_{2}\right)=\int\frac{d E}{2\pi} G_{1}\left(E_{1}, E\right) G_{2}\left(E, E_{2}\right).
+% \end{equation}
+% If $F(t_{1}, t_{2})$ depends only on $t_{1}-t_{2}$,
+% \begin{equation}
+% F\left(E_{1}, E_{2}\right)=2\pi F\left(E_{1}\right)\delta(E_{1}-E_{2})
+% \end{equation}
+% Note that
+% \begin{equation}
+% \int_{-\infty}^{\infty} \delta(x) d x=1.
+% \end{equation}
+% \begin{equation}
+% \int_{a-\epsilon}^{a+\epsilon} f(x) \delta(x-a) d x=f(a)
+% \end{equation}
+% \section{Adiabatic regime($\omega$ is small)}
+
+% So, the charge current is given by (why? DC?)
+% \begin{equation}
+% d Q_{\alpha \sigma}(t) / d t=q \int \frac{d E}{2 \pi}\left(-\partial_{E} f\right)\left[\Gamma_{\alpha} \mathbf{G}^{r}(t) \mathbf{\Delta} \mathbf{G}^{a}(t)\right]_{\sigma \sigma}
+% \end{equation}
+
+
+
+
 
 
 
