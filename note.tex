@@ -399,6 +399,23 @@ G_{ \downarrow, \uparrow}^{r}\left(E_{1}, E_{2}\right) &= \gamma G_{ \downarrow}
 &=\frac{2 \pi\gamma G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r} \left(E_{1}\right) \delta(E_{1}+\omega-E_{2}) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r}\left(E_{1}\right)}
 \end{split}
 \end{equation}
+Define
+\begin{equation}
+g_{\sigma}^{r,a}(E) \equiv \frac{ G_{\sigma}^{0r,a}(E)} {1-\gamma^{2} G_{\sigma}^{0r,a}(E) G_{\bar{\sigma}}^{0r,a}(E+\bar{\sigma}\omega)},
+\end{equation}
+then we can write
+\begin{equation}
+G_{\uparrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
+\end{equation}
+\begin{equation}
+G_{\downarrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi g_{\downarrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
+\end{equation}
+\begin{equation}
+G_{\uparrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi \gamma G_{\uparrow}^{0r}(E_{1}) g_{\downarrow}^{r}(E_{1}-\omega) \delta(E_{1}-\omega-E_{2}).
+\end{equation}
+\begin{equation}
+G_{\downarrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi\gamma G_{\downarrow}^{0r}(E_{1})g_{\uparrow}^{r}(E_{1}+\omega) \delta(E_{1}+\omega-E_{2}).
+\end{equation}
 Thus we get $G^{r}$ in Eq. (\ref{eq:Gr2}).
 \section{Calculate $G^{<}$}
 \subsection{Calcualte $\Sigma_{\alpha}$}
@@ -480,14 +497,8 @@ in which, the $G_{1}$ term is
 \begin{equation}
 \begin{split}
 G_{1} &= G_{\uparrow, \uparrow}^{r}(E_{1}, E)G_{\uparrow, \uparrow}^{r,*}(E, E_{2})+G_{\downarrow, \uparrow}^{r}(E_{1},E)G_{\downarrow, \uparrow}^{r,*}(E,E_{2}) \\
-&=\frac{2 \pi G_{ \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E\right)}{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right)} \times (
-\frac{2 \pi G_{ \uparrow}^{0r}\left(E\right) \delta\left(E-E_{2}\right)} {1-\gamma^{2} G_{ \uparrow}^{0r}\left(E\right) G_{ \downarrow}^{0r}\left(E-\omega\right)})^{*} \\
-&\quad+ \frac{2 \pi\gamma G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r} \left(E_{1}\right) \delta(E_{1}+\omega-E) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r}\left(E_{1}\right)} \times
-(\frac{2 \pi\gamma G_{ \uparrow}^{0r}\left(E+\omega\right) G_{ \downarrow}^{0r} \left(E\right) \delta(E+\omega-E_{2}) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E+\omega\right) G_{ \downarrow}^{0r}\left(E\right)})^{*} \\
-&=\frac{2 \pi G_{ \uparrow}^{0r}\left(E_{1}\right) \delta\left(E_{1}-E\right)}{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}\right) G_{ \downarrow}^{0r}\left(E_{1}-\omega\right)} \times 
-\frac{2 \pi G_{ \uparrow}^{0a}\left(E\right) \delta\left(E-E_{2}\right)} {1-\gamma^{2} G_{ \uparrow}^{0a}\left(E\right) G_{ \downarrow}^{0a}\left(E-\omega\right)} \\
-&\quad+ \frac{2 \pi\gamma G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r} \left(E_{1}\right) \delta(E_{1}+\omega-E) }{1-\gamma^{2} G_{ \uparrow}^{0r}\left(E_{1}+\omega\right) G_{ \downarrow}^{0r}\left(E_{1}\right)} \times
-\frac{2 \pi\gamma G_{ \uparrow}^{0a}\left(E+\omega\right) G_{ \downarrow}^{0a} \left(E\right) \delta(E+\omega-E_{2}) }{1-\gamma^{2} G_{ \uparrow}^{0a}\left(E+\omega\right) G_{ \downarrow}^{0a}\left(E\right)}
+&= 2 \pi g_{\uparrow}^{r}\left(E_{1}\right) \delta\left(E_{1}-E\right) 2 \pi g_{\uparrow}^{a}\left(E\right) \delta\left(E-E_{2}\right) \\
+& + 
 \end{split}
 \end{equation}
 the $G_{2}$ term is
@@ -525,11 +536,6 @@ G_{11}^{<}(E_{1},E_{2})&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) \frac{2 \pi G_{
 \end{split}
 \end{equation}
 \section{Spin-up current}
-Define
-\begin{equation}
-g_{\sigma}^{r,a}(E) \equiv \frac{ G_{\sigma}^{0r,a}(E)} {1-\gamma^{2} G_{\sigma}^{0r,a}(E) G_{\bar{\sigma}}^{0r,a}(E+\bar{\sigma}\omega)},
-\end{equation}
-then we can write
 \begin{equation}
 \begin{split}
 G_{11}^{<}(E_{1},E_{2})&= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}(E_{1}) \times 2 \pi \delta\left(E_{1}-E_{2}\right) g_{\uparrow}^{a}(E_{1}) \\
@@ -537,19 +543,6 @@ G_{11}^{<}(E_{1},E_{2})&= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}(E_{1}) \time
 \end{split}
 \end{equation}
 and
-\begin{equation}
-G_{\uparrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
-\end{equation}
-\begin{equation}
-G_{\downarrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi g_{\downarrow}^{r}(E_{1}) \delta(E_{1}-E_{2}).
-\end{equation}
-\begin{equation}
-G_{\uparrow,\downarrow}^{r}(E_{1},E_{2}) = 2\pi \gamma G_{\uparrow}^{0r}(E_{1}) g_{\downarrow}^{r}(E_{1}-\omega) \delta(E_{1}-\omega-E_{2}).
-\end{equation}
-\begin{equation}
-G_{\downarrow,\uparrow}^{r}(E_{1},E_{2}) = 2\pi\gamma G_{\downarrow}^{0r}(E_{1})g_{\uparrow}^{r}(E_{1}+\omega) \delta(E_{1}+\omega-E_{2}).
-\end{equation}
-
 The spin-up current is
 \begin{equation}
 \begin{split}
@@ -563,7 +556,10 @@ Assume (?)
 \begin{equation}
 \Sigma_{\alpha}^{a}(E) = \frac{i}{2}\Gamma_{\alpha}(E)
 \end{equation}
-
+or
+\begin{equation}
+\Sigma_{\alpha}^{a}(E)=\sum_{k} T_{k \alpha}^{*} \frac{1}{E-\epsilon_{k}-i0^{+}} T_{k \alpha}(E)
+\end{equation}
 
 
 
