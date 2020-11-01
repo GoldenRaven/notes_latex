@@ -194,6 +194,7 @@ I_{\alpha\sigma}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{
 &=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr} [ G^{r}\left(E+\omega_{1}, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) + G^{<}(E+\omega_{1}, E')\Sigma_{\alpha}^{a}(E', E) \\
 & \qquad \qquad \qquad\qquad\quad  -\Sigma_{\alpha}^{<}\left(E+\omega_{1}, E'\right) G^{a}\left(E', E\right)-\Sigma_{\alpha}^{r}\left(E+\omega_{1}, E'\right) G^{<} \left(E', E\right) ] .
 \end{split}
+\label{eq:current3}
 \end{equation}
 Here, $G^{r,<} \equiv G_{n\sigma',m\sigma}^{r,<}$, notation Tr means sum over QD level index $n$, and matrix element
 \begin{equation}
@@ -468,16 +469,15 @@ G_{\sigma,\sigma'}^{a}\left(E_{1}, E_{2}\right)=(G_{\sigma',\sigma}^{r}\left(E_{
 \end{equation}
 \begin{equation}
 G^{r}(E_{1},E_{2})=\left(\begin{array}{cc}
-G_{\uparrow,\uparrow}^{r}(E_{1},E_{2}) & G_{\downarrow,\uparrow}^{r}(E_{1},E_{2}) \\
-G_{\uparrow,\downarrow}^{r}(E_{1},E_{2}) & G_{\downarrow,\downarrow}^{r}(E_{1},E_{2})
+G_{11}^{r}(E_{1},E_{2}) & G_{12}^{r}(E_{1},E_{2}) \\
+G_{21}^{r}(E_{1},E_{2}) & G_{22}^{r}(E_{1},E_{2})
 \end{array}\right)
 \end{equation}
-
 so in spin space, 
 \begin{equation}
 G^{a}(E_{1},E_{2})=\left(\begin{array}{cc}
-(G_{\uparrow,\uparrow}^{r}(E_{2},E_{1}))^{*} & (G_{\uparrow,\downarrow}^{r}(E_{2},E_{1}))^{*} \\
-(G_{\downarrow,\uparrow}^{r}(E_{2},E_{1}))^{*} & (G_{\downarrow,\downarrow}^{r}(E_{2},E_{1}))^{*}
+(G_{11}^{r}(E_{2},E_{1}))^{*} & (G_{21}^{r}(E_{2},E_{1}))^{*} \\
+(G_{12}^{r}(E_{2},E_{1}))^{*} & (G_{22}^{r}(E_{2},E_{1}))^{*}
 \end{array}\right)
 \end{equation}
 
@@ -502,22 +502,22 @@ G_{3} & G_{4}
 in which, the $G_{1}$ term is
 \begin{equation}
 \begin{split}
-G_{1} &= G_{\uparrow, \uparrow}^{r}(E_{1}, E)G_{\uparrow, \uparrow}^{r,*}(E_{2},E)+G_{\downarrow, \uparrow}^{r}(E_{1},E)G_{\downarrow, \uparrow}^{r,*}(E_{2},E) \\
-&= (2 \pi)^{2} g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
-&\quad + (2 \pi \gamma)^{2} G_{\downarrow}^{0 r}\left(E_{1}\right) g_{\uparrow}^{r}\left(E_{1}+\omega\right)  G_{\downarrow}^{0 r*}\left(E_{2}\right) g_{\uparrow}^{r*}\left(E_{2}+\omega\right) \delta\left(E_{1}+\omega-E\right) \delta\left(E_{2}+\omega-E\right)
+G_{1} &= G_{11}^{r}(E_{1}, E)G_{11}^{r*}(E_{2},E)+G_{12}^{r}(E_{1},E)G_{12}^{r*}(E_{2},E) \\
+&= (2 \pi)^{2} g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
+&\quad + (2 \pi \gamma)^{2} G_{\uparrow}^{0 r}\left(E_{1}\right) g_{\downarrow}^{r}\left(E_{1}-\omega\right)  G_{\uparrow}^{0 r*}\left(E_{2}\right) g_{\downarrow}^{r*}\left(E_{2}-\omega\right) \delta\left(E_{1}-\omega-E\right) \delta\left(E_{2}-\omega-E\right)
 \end{split}
 \end{equation}
 the $G_{2}$ term is
 \begin{equation}
-G_{2} = G_{\uparrow, \uparrow}^{r}(E_{1}, E)G_{\uparrow, \downarrow}^{r,*}(E_{2},E) + G_{\downarrow, \uparrow}^{r}(E_{1}, E)G_{\downarrow, \downarrow}^{r,*}(E_{2},E)
+G_{2} = G_{11}^{r}(E_{1}, E)G_{21}^{r*}(E_{2},E) + G_{12}^{r}(E_{1}, E)G_{22}^{r*}(E_{2},E)
 \end{equation}
 the $G_{3}$ term is
 \begin{equation}
-G_{3} = G_{\uparrow, \downarrow}^{r}(E_{1},E)G_{\uparrow, \uparrow}^{r}(E_{2},E) + G_{\downarrow, \downarrow}^{r}(E_{1},E)G_{\downarrow, \uparrow}^{r,*}(E_{2},E)
+G_{3} = G_{21}^{r}(E_{1},E)G_{11}^{r}(E_{2},E) + G_{22}^{r}(E_{1},E)G_{12}^{r*}(E_{2},E)
 \end{equation}
 the $G_{4}$ term is
 \begin{equation}
-G_{4} =  G_{\uparrow, \downarrow}^{r}(E_{1},E)G_{\uparrow, \downarrow}^{r}(E_{2},E) + G_{\downarrow, \downarrow}^{r}(E_{1},E)G_{\downarrow, \downarrow}^{r,*}(E_{2},E)  
+G_{4} =  G_{21}^{r}(E_{1},E)G_{21}^{r*}(E_{2},E) + G_{22}^{r}(E_{1},E)G_{22}^{r*}(E_{2},E)  
 \end{equation}
 So, the matrix element of $G^{<}$ is
 \begin{equation}
@@ -532,28 +532,68 @@ G_{21}^{<} & G_{22}^{<}
 \begin{equation}
 \begin{split}
 G_{11}^{<}(E_{1},E_{2})&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) (2 \pi)^{2} g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
-&\quad+\int \frac{d E}{2 \pi} i f(E) \Gamma(E) (2 \pi \gamma)^{2} G_{\downarrow}^{0 r}\left(E_{1}\right) g_{\uparrow}^{r}\left(E_{1}+\omega\right)  G_{\downarrow}^{0 r*}\left(E_{2}\right) g_{\uparrow}^{r*}\left(E_{2}+\omega\right) \delta\left(E_{1}+\omega-E\right) \delta\left(E_{2}+\omega-E\right)\\
+&\quad+\int \frac{d E}{2 \pi} i f(E) \Gamma(E) (2 \pi \gamma)^{2} G_{\uparrow}^{0 r}\left(E_{1}\right) g_{\downarrow}^{r}\left(E_{1}-\omega\right)  G_{\uparrow}^{0 r*}\left(E_{2}\right) g_{\downarrow}^{r*}\left(E_{2}-\omega\right) \delta\left(E_{1}-\omega-E\right) \delta\left(E_{2}-\omega-E\right)\\
 &= 2\pi i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right) \delta(E_{2}-E_{1}) \\
-&\quad+ 2\pi \gamma^{2} i f(E_{1}+\omega) \Gamma(E_{1}+\omega) G_{\downarrow}^{0 r}\left(E_{1}\right) g_{\uparrow}^{r}\left(E_{1}+\omega\right)  G_{\downarrow}^{0 r*}\left(E_{2}\right) g_{\uparrow}^{r*}\left(E_{2}+\omega\right) \delta(E_{2}-E_{1})
+&\quad+ 2\pi \gamma^{2} i f(E_{1}-\omega) \Gamma(E_{1}-\omega) G_{\uparrow}^{0 r}\left(E_{1}\right) g_{\downarrow}^{r}\left(E_{1}-\omega\right)  G_{\uparrow}^{0 r*}\left(E_{2}\right) g_{\downarrow}^{r*}\left(E_{2}-\omega\right) \delta(E_{2}-E_{1})
 \end{split}
 \end{equation}
 \section{Spin-up current}
-The spin-up current is
+The spin-up current (\ref{eq:current3}) is
 \begin{equation}
 \begin{split}
-I_{\alpha\uparrow,\uparrow}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} [G_{\uparrow,\uparrow}^{r}\left(E+\omega_{1}, E^{\prime}\right) 2\pi if(E')\Gamma_{\alpha}(E')\delta(E^{\prime}- E) \\
-&\qquad\qquad\qquad\qquad + G_{11}^{<}(E+\omega_{1}, E')2\pi\Sigma_{\alpha}^{a}(E')\delta(E'-E) + c.c. ]\\
-&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi}  [G_{\uparrow,\uparrow}^{r}\left(E+\omega_{1}, E\right) if(E)\Gamma_{\alpha}(E) \\
-&\qquad\qquad\qquad + G_{11}^{<}(E+\omega_{1}, E)\Sigma_{\alpha}^{a}(E) + c.c. ] \\
+I_{\alpha\uparrow,\uparrow}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \big[G_{11}^{r} \left(E+\omega_{1}, E^{\prime}\right) 2\pi if(E')\Gamma_{\alpha}(E')\delta(E^{\prime}- E)  + G_{11}^{<}(E+\omega_{1}, E')2\pi\Sigma_{\alpha}^{a}(E')\delta(E'-E) \\
+& \quad -2\pi if(E+\omega_{1})\Gamma_{\alpha}(E+\omega_{1})\delta(E+\omega_{1} - E') G_{11}^{a}\left(E', E\right)-2\pi\Sigma_{\alpha}^{r}\left(E+\omega_{1}\right)\delta(E+\omega_{1}-E') G_{11}^{<} \left(E', E\right) \big] \\
+&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \big[G_{11}^{r}\left(E+\omega_{1}, E\right) if(E)\Gamma_{\alpha}(E) + G_{11}^{<}(E+\omega_{1}, E)\Sigma_{\alpha}^{a}(E) \\
+&\quad - if(E+\omega_{1})\Gamma_{\alpha}(E+\omega_{1}) G_{11}^{a}\left(E+\omega_{1}, E\right) - \Sigma_{\alpha}^{r}\left(E+\omega_{1}\right) G_{11}^{<} \left(E+\omega_{1}, E\right) \big].
 \end{split}
+\label{eq:current4}
 \end{equation}
-Assume (?)
+Recall that
 \begin{equation}
-\Sigma_{\alpha}^{a}(E) = \frac{i}{2}\Gamma_{\alpha}(E)
+G_{11}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2})
+\label{eq:Gupup}
 \end{equation}
-or
 \begin{equation}
-\Sigma_{\alpha}^{a}(E)=\sum_{k} T_{k \alpha}^{*} \frac{1}{E-\epsilon_{k}-i0^{+}} T_{k \alpha}(E)
+G_{11}^{a}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{a}(E_{1}) \delta(E_{1}-E_{2})
+\label{eq:Gupupa}
+\end{equation}
+\begin{equation}
+G_{11}^{<}(E_{1},E_{2}) = 2\pi [A(E_{1},E_{2})+B(E_{1},E_{2})] \delta(E_{2}-E_{1}),
+\label{eq:G11}
+\end{equation}
+in which
+\begin{equation}
+A(E_{1},E_{2})= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right)
+\end{equation}
+\begin{equation}
+B(E_{1},E_{2}) = \gamma^{2} i f(E_{1}-\omega) \Gamma(E_{1}-\omega) G_{\uparrow}^{0 r}\left(E_{1}\right) g_{\downarrow}^{r}\left(E_{1}-\omega\right)  G_{\uparrow}^{0 r*}\left(E_{2}\right) g_{\downarrow}^{r*}\left(E_{2}-\omega\right) .
+\end{equation}
+Substitute Eq. (\ref{eq:Gupup}) (\ref{eq:Gupupa}) and (\ref{eq:G11}) into (\ref{eq:current4}), we have
+\begin{equation}
+\begin{split}
+I_{\alpha\uparrow,\uparrow}(\omega_{1})&= -\frac{e}{\hbar}\int dE g_{\uparrow}^{r}(E+\omega_{1}) if(E)\Gamma_{\alpha}(E)\delta(\omega_{1}) + [A(E+\omega_{1},E)+B(E+\omega_{1},E)]\delta(-\omega_{1}) \Sigma_{\alpha}^{a}(E)\\
+&\quad -if\left(E+\omega_{1}\right) \Gamma_{\alpha}\left(E+\omega_{1}\right) g_{\uparrow}^{a}\left(E+\omega_{1}\right) \delta(\omega_{1}) - \Sigma_{\alpha}^{r}\left(E+\omega_{1}\right) [A(E+\omega_{1},E)+B(E+\omega_{1},E)]\delta(-\omega_{1})
+\end{split}
+\label{eq:current5}
+\end{equation}
+Omit $\omega_{1}$, we get
+\begin{equation}
+\begin{split}
+I_{\alpha\uparrow,\uparrow}&= -\frac{e}{\hbar}\int dE g_{\uparrow}^{r}(E) if(E)\Gamma_{\alpha}(E) + [A(E)+B(E)] \Sigma_{\alpha}^{a}(E)\\
+&\quad-if\left(E\right) \Gamma_{\alpha}\left(E\right) g_{\uparrow}^{a}\left(E\right)  - \Sigma_{\alpha}^{r}\left(E\right) [A(E)+B(E)] \\
+&=-\frac{e}{\hbar}\int dE \big[g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}\left(E\right) + A(E)+B(E) \big] if(E)\Gamma_{\alpha}(E) ,
+\end{split}
+\label{eq:current6}
+\end{equation}
+in which,
+\begin{equation}
+g_{\sigma}^{r,a}(E) \equiv \frac{ G_{\sigma}^{0r,a}(E)} {1-\gamma^{2} G_{\sigma}^{0r,a}(E) G_{\bar{\sigma}}^{0r,a}(E+\bar{\sigma}\omega)},
+\end{equation}
+\begin{equation}
+A(E)= i f(E) \Gamma(E) g_{\uparrow}^{r}\left(E\right)  g_{\uparrow}^{r,*}\left(E\right)
+\end{equation}
+\begin{equation}
+B(E) = \gamma^{2} i f(E-\omega) \Gamma(E-\omega) G_{\uparrow}^{0 r}\left(E\right) g_{\downarrow}^{r}\left(E-\omega\right)  G_{\uparrow}^{0 r*}\left(E\right) g_{\downarrow}^{r*}\left(E-\omega\right) .
 \end{equation}
 
 
@@ -561,14 +601,6 @@ or
 
 
 \newpage
-
-
-
-
-
-
-
-
 
 
 % \section{Appendix}
