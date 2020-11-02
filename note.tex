@@ -192,7 +192,9 @@ Following Eq. (224) in WangJ's note, its Fourier transformation is
 \begin{split}
 I_{\alpha\sigma}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr}\left[G^{r}\left(E+\omega_{1}, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) + G^{<}(E+\omega_{1}, E')\Sigma_{\alpha}^{a}(E', E) + c.c.\right]\\
 &=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr} [ G^{r}\left(E+\omega_{1}, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) + G^{<}(E+\omega_{1}, E')\Sigma_{\alpha}^{a}(E', E) \\
-& \qquad \qquad \qquad\qquad\quad  -\Sigma_{\alpha}^{<}\left(E+\omega_{1}, E'\right) G^{a}\left(E', E\right)-\Sigma_{\alpha}^{r}\left(E+\omega_{1}, E'\right) G^{<} \left(E', E\right) ] .
+& \qquad \qquad \qquad\qquad\quad  -\Sigma_{\alpha}^{<}\left(E+\omega_{1}, E'\right) G^{a}\left(E', E\right)-\Sigma_{\alpha}^{r}\left(E+\omega_{1}, E'\right) G^{<} \left(E', E\right) ] \\
+% &= -\frac{e}{\hbar}\int \frac{d E}{2 \pi} \frac{d E^{\prime}}{2 \pi} \rm{Tr} [ G^{r}\left(E+\omega_{1}, E^{\prime}\right) \Sigma_{\alpha}^{<}\left(E^{\prime}, E\right) + G^{<}(E+\omega_{1}, E')\Sigma_{\alpha}^{a}(E', E) \\
+% & \qquad \qquad \qquad\qquad\quad  -\Sigma_{\alpha}^{<}\left(E+\omega_{1}, E'\right) G^{a}\left(E', E\right)-\Sigma_{\alpha}^{r}\left(E+\omega_{1}, E'\right) G^{<} \left(E', E\right) ] .
 \end{split}
 \label{eq:current3}
 \end{equation}
@@ -598,7 +600,7 @@ Omit $\omega_{1}$, we get a DC current
 \begin{split}
 I_{\alpha\uparrow,\uparrow}&= -\frac{e}{\hbar}\int dE g_{\uparrow}^{r}(E) if(E)\Gamma_{\alpha}(E) + [A_{11}(E)+B_{11}(E)] \Sigma_{\alpha}^{a}(E)\\
 &\quad-if\left(E\right) \Gamma_{\alpha}\left(E\right) g_{\uparrow}^{a}\left(E\right)  - \Sigma_{\alpha}^{r}\left(E\right) [A_{11}(E)+B_{11}(E)] \\
-&=-\frac{e}{\hbar}\int dE \big[g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}\left(E\right) + A_{11}(E)+B_{11}(E) \big] if(E)\Gamma_{\alpha}(E) ,
+&=-\frac{e}{\hbar}\int dE \big[g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}\left(E\right) \big] if(E)\Gamma_{\alpha}(E)  + [A_{11}(E)+B_{11}(E)]i\Gamma_{\alpha}(E),
 \end{split}
 \label{eq:current6}
 \end{equation}
@@ -612,25 +614,49 @@ A_{11}(E)= i f(E) \Gamma(E) |g_{\uparrow}^{r}\left(E\right)|^{2},
 \begin{equation}
 B_{11}(E) = \gamma^{2} i f(E-\omega) \Gamma(E-\omega) |g_{\uparrow}^{r}\left(E\right)|^{2} |G_{\downarrow}^{0r}\left(E-\omega\right)|^{2}.
 \end{equation}
-\section{Spin-down current}
-From Eq. (\ref{eq:current6}) we have
-\begin{equation}
-\begin{split}
-I_{\alpha\downarrow,\downarrow}(\omega_{1})&=-\frac{e}{\hbar}\int dE \big[g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}\left(E\right) + A_{22}(E)+B_{22}(E) \big] if(E)\Gamma_{\alpha}(E) ,
-\end{split}
-\label{eq:current7}
-\end{equation}
-in which, $g_{\sigma}^{r,a}$ is defined as previous, and
-\begin{equation}
-A_{22}(E)= i f(E) \Gamma(E) |g_{\downarrow}^{r}\left(E\right)|^{2}
-\end{equation}
-\begin{equation}
-B_{22}(E) = \gamma^{2} i f(E+\omega) \Gamma(E+\omega) |g_{\downarrow}^{r}\left(E\right)|^{2} |G_{\uparrow}^{0r}\left(E+\omega\right)|^{2} .
-\end{equation}
-\section{Relations}
+Using the following relations
 \begin{equation}
 g_{\uparrow}^{r}(E) = \frac{ G_{\uparrow}^{0r}(E)} {1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)},
 \end{equation}
+\begin{equation}
+g_{\uparrow}^{a}(E) = \frac{ G_{\uparrow}^{0a}(E)} {1-\gamma^{2} G_{\uparrow}^{0a}(E) G_{\downarrow}^{0a}(E-\omega)},
+\end{equation}
+in which,
+\begin{equation}
+G_{\uparrow}^{0 r}(E)=\frac{1}{E-\varepsilon^{0}-B_{0} \cos \theta+i \Gamma(E) / 2}
+\end{equation}
+\begin{equation}
+G_{\downarrow}^{0 r}(E-\omega)=\frac{1}{E-\omega-\varepsilon^{0}+B_{0} \cos \theta+i \Gamma(E) / 2},
+\end{equation}
+note that
+\begin{equation}
+G_{\uparrow}^{0 r}(E) - G_{\uparrow}^{0 a}(E)=-i\Gamma(E) |G_{\uparrow}^{0 r}(E)|^{2}
+\end{equation}
+\begin{equation}
+G_{\downarrow}^{0 r}(E-\omega) - G_{\downarrow}^{0 a}(E-\omega)=-i\Gamma(E-\omega) |G_{\downarrow}^{0 r}(E-\omega)|^{2},
+\end{equation}
+we get
+\begin{equation}
+\begin{split}
+g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}(E) &= \frac{G_{\uparrow}^{0r}(E)[1-\gamma^{2} G_{\uparrow}^{0a}(E) G_{\downarrow}^{0a}(E-\omega)]- G_{\uparrow}^{0a}(E)[1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)]} {|1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)|^{2}} \\
+&=\frac{-i\Gamma(E) |G_{\uparrow}^{0 r}(E)|^{2}-i\gamma^{2}\Gamma(E-\omega) |G_{\uparrow}^{0r}|^{2}} {|1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)|^{2}},
+\end{split}
+\end{equation}
+which cancels $A_{11}$ term in DC current equation and yields
+\begin{equation}
+\begin{split}
+I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E-\omega) \Gamma_{\alpha}(E)|g_{\uparrow}^{r}\left(E\right)|^{2} |G_{\downarrow}^{0r} (E-\omega)|^{2} \big[f(E) - f(E-\omega) \big],
+\end{split}
+\label{eq:current6}
+\end{equation}
+\section{Spin-down current}
+From Eq. (\ref{eq:current6}) we have
+\begin{equation}
+I_{\alpha\downarrow,\downarrow}= -\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E+\omega) \Gamma_{\alpha}(E)|g_{\downarrow}^{r}\left(E\right)|^{2} |G_{\uparrow}^{0r} (E+\omega)|^{2} \big[f(E) - f(E+\omega) \big].
+\label{eq:current7}
+\end{equation}
+\section{Check charge current}
+In parametric pumping setup, left and right leads are identical, i.e. $f_{L}(E) = F_{R}(E)$, no charge current is induced.
 \begin{equation}
 \begin{split}
 g_{\uparrow}^{r}(E) G_{\downarrow}^{0r}(E-\omega) &= \frac{ G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} {1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} \\
@@ -643,13 +669,11 @@ g_{\uparrow}^{r}(E+\omega) G_{\downarrow}^{0r}(E) &= \frac{ G_{\uparrow}^{0r}(E+
 &= G_{\uparrow}^{0r}(E+\omega) g_{\downarrow}^{r}(E)
 \end{split}
 \end{equation}
-\begin{equation}
-\begin{split}
-B_{11}(E+\omega) &= \gamma^{2} i f(E) \Gamma(E) |g_{\uparrow}^{r}\left(E+\omega\right)|^{2} |G_{\downarrow}^{0r}\left(E\right)|^{2} \\
-&= \gamma^{2} i f(E) \Gamma(E)\left|g_{\downarrow}^{r}(E)\right|^{2}\left|G_{\uparrow}^{0 r}(E+\omega)\right|^{2} \\
-&= \gamma^{2}\Sigma^{<}(E) \left|g_{\downarrow}^{r}(E)\right|^{2}\left|G_{\uparrow}^{0 r}(E+\omega)\right|^{2}
-\end{split}
-\end{equation}
+
+
+
+
+
 
 
 \newpage
