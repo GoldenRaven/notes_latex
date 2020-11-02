@@ -656,22 +656,25 @@ I_{\alpha\downarrow,\downarrow}= -\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E+\ome
 \label{eq:current7}
 \end{equation}
 \section{Check charge current}
-In parametric pumping setup, left and right leads are identical, i.e. $f_{L}(E) = F_{R}(E)$, no charge current is induced.
+In parametric pumping setup, left and right leads are identical, i.e. $f_{L}(E) = F_{R}(E)$, no charge current is induced. Notice that
 \begin{equation}
 \begin{split}
 g_{\uparrow}^{r}(E) G_{\downarrow}^{0r}(E-\omega) &= \frac{ G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} {1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} \\
 &= G_{\uparrow}^{0r}(E) g_{\downarrow}^{r}(E-\omega)
 \end{split}
 \end{equation}
+then the spin-up current is
 \begin{equation}
-\begin{split}
-g_{\uparrow}^{r}(E+\omega) G_{\downarrow}^{0r}(E) &= \frac{ G_{\uparrow}^{0r}(E+\omega)G_{\downarrow}^{0r}(E)} {1-\gamma^{2} G_{\uparrow}^{0r}(E+\omega) G_{\downarrow}^{0r}(E)} \\
-&= G_{\uparrow}^{0r}(E+\omega) g_{\downarrow}^{r}(E)
-\end{split}
+I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E-\omega) \Gamma_{\alpha}(E)|g_{\downarrow}^{r}\left(E-\omega\right)|^{2} |G_{\uparrow}^{0r} (E)|^{2} \big[f(E) - f(E-\omega) \big].
 \end{equation}
-
-
-
+The integral keeps the same when the independent variable is shifted, we make $E\rightarrow E+\omega$,
+\begin{equation}
+I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E) \Gamma_{\alpha}(E+\omega)|g_{\downarrow}^{r}\left(E\right)|^{2} |G_{\uparrow}^{0r} (E+\omega)|^{2} \big[f(E+\omega) - f(E) \big].
+\end{equation}
+Note that $\Gamma(E) = \Gamma_{L}(E) + \Gamma_{R}(E) = 2\Gamma_{\alpha}(E)$, so if $\Gamma_{\alpha}(E+\omega) = \Gamma_{\alpha}(E-\omega)$, we get
+\begin{equation}
+I_{\alpha\uparrow,\uparrow} + I_{\alpha\downarrow,\downarrow} = 0.
+\end{equation}
 
 
 
