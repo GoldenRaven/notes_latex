@@ -486,7 +486,7 @@ so in spin space,
 G^{a}(E_{1},E_{2})=\left(\begin{array}{cc}
 (G_{11}^{r}(E_{2},E_{1}))^{*} & (G_{21}^{r}(E_{2},E_{1}))^{*} \\
 (G_{12}^{r}(E_{2},E_{1}))^{*} & (G_{22}^{r}(E_{2},E_{1}))^{*}
-\end{array}\right)
+\end{array}\right).
 \end{equation}
 
 \subsection{Calculate $G^{<}$}
@@ -495,7 +495,7 @@ Substitute $G^{r}, \Sigma^{<}, G^{a}$ into Eq. (\ref{eq:r<a}), we get $G^{<}$,
 \begin{split}
 G^{<}(E_{1},E_{2})&=\int\frac{dE}{2\pi}\frac{dE'}{2\pi}G^{r}(E_{1}, E) \Sigma^{<}(E, E') G^{a}(E', E_{2}) \\
 &= \int \frac{dE}{2\pi} G^{r}\left(E_{1}, E\right) \Sigma^{<}\left(E\right) G^{a}\left(E, E_{2}\right) \\
-&= \int \frac{dE}{2\pi} if(E)\Gamma(E) G^{r}\left(E_{1}, E\right) G^{a}\left(E, E_{2}\right)
+&= \int \frac{dE}{2\pi} if(E)\Gamma(E) G^{r}\left(E_{1}, E\right) G^{a}\left(E, E_{2}\right).
 \end{split}
 \end{equation}
 \begin{equation}
@@ -512,7 +512,7 @@ in which, the $G_{1}$ term is
 \begin{split}
 G_{1} &= G_{11}^{r}(E_{1}, E)G_{11}^{r*}(E_{2},E)+G_{12}^{r}(E_{1},E)G_{12}^{r*}(E_{2},E) \\
 &= (2 \pi)^{2} g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
-&\quad + (2 \pi \gamma)^{2} g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) \delta\left(E_{1}-\omega-E\right) \delta\left(E_{2}-\omega-E\right)
+&\quad + (2 \pi \gamma)^{2} g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) \delta\left(E_{1}-\omega-E\right) \delta\left(E_{2}-\omega-E\right),
 \end{split}
 \end{equation}
 the $G_{2}$ term is
@@ -528,7 +528,7 @@ the $G_{4}$ term is
 \begin{split}
 G_{4} &=G_{21}^{r}(E_{1},E)G_{21}^{r*}(E_{2},E) + G_{22}^{r}(E_{1},E)G_{22}^{r*}(E_{2},E) \\
 &= (2 \pi)^{2} g_{\downarrow}^{r}\left(E_{1}\right)  g_{\downarrow}^{r*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
-&\quad + (2 \pi \gamma)^{2} g_{\downarrow}^{r}\left(E_{1}\right) G_{\uparrow}^{0r}\left(E_{1}+\omega\right)  g_{\downarrow}^{r*}\left(E_{2}\right) G_{\uparrow}^{0r*}\left(E_{2}+\omega\right) \delta\left(E_{1}+\omega-E\right) \delta\left(E_{2}+\omega-E\right)
+&\quad + (2 \pi \gamma)^{2} g_{\downarrow}^{r}\left(E_{1}\right) G_{\uparrow}^{0r}\left(E_{1}+\omega\right)  g_{\downarrow}^{r*}\left(E_{2}\right) G_{\uparrow}^{0r*}\left(E_{2}+\omega\right) \delta\left(E_{1}+\omega-E\right) \delta\left(E_{2}+\omega-E\right).
 \end{split}
 \end{equation}
 So, the matrix element of $G^{<}$ is
@@ -538,7 +538,7 @@ G^{<}\left(E_{1}, E_{2}\right) =
 \left(\begin{array}{cc}
 G_{11}^{<} & G_{12}^{<} \\
 G_{21}^{<} & G_{22}^{<}
-\end{array}\right)
+\end{array}\right),
 \end{split}
 \end{equation}
 \begin{equation}
@@ -546,13 +546,13 @@ G_{21}^{<} & G_{22}^{<}
 G_{11}^{<}(E_{1},E_{2})&=\int \frac{d E}{2 \pi} i f(E) \Gamma(E) (2 \pi)^{2} g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right) \delta\left(E_{2}-E\right) \delta\left(E_{1}-E\right) \\
 &\quad+\int \frac{d E}{2 \pi} i f(E) \Gamma(E) (2 \pi \gamma)^{2} g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) \delta\left(E_{1}-\omega-E\right) \delta\left(E_{2}-\omega-E\right)\\
 &= 2\pi i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right) \delta(E_{2}-E_{1}) \\
-&\quad+ 2\pi \gamma^{2} i f(E_{1}-\omega) \Gamma(E_{1}-\omega) g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) \delta(E_{2}-E_{1})
+&\quad+ 2\pi \gamma^{2} i f(E_{1}-\omega) \Gamma(E_{1}-\omega) g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) \delta(E_{2}-E_{1}),
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
 G_{22}^{<}(E_{1},E_{2})&= 2\pi i f(E_{1}) \Gamma(E_{1}) g_{\downarrow}^{r}\left(E_{1}\right)  g_{\downarrow}^{r,*}\left(E_{2}\right) \delta(E_{2}-E_{1}) \\
-&\quad+ 2\pi \gamma^{2} i f(E_{1}+\omega) \Gamma(E_{1}+\omega) g_{\downarrow}^{r}\left(E_{1}\right) G_{\uparrow}^{0r}\left(E_{1}+\omega\right)  g_{\downarrow}^{r*}\left(E_{2}\right) G_{\uparrow}^{0r*}\left(E_{2}+\omega\right) \delta(E_{2}-E_{1})
+&\quad+ 2\pi \gamma^{2} i f(E_{1}+\omega) \Gamma(E_{1}+\omega) g_{\downarrow}^{r}\left(E_{1}\right) G_{\uparrow}^{0r}\left(E_{1}+\omega\right)  g_{\downarrow}^{r*}\left(E_{2}\right) G_{\uparrow}^{0r*}\left(E_{2}+\omega\right) \delta(E_{2}-E_{1}).
 \end{split}
 \end{equation}
 \section{Spin-up current}
@@ -568,11 +568,11 @@ I_{\alpha\uparrow,\uparrow}(\omega_{1})&=-\frac{e}{\hbar}\int \frac{d E}{2 \pi} 
 \end{equation}
 Recall that
 \begin{equation}
-G_{11}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2})
+G_{11}^{r}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{r}(E_{1}) \delta(E_{1}-E_{2}),
 \label{eq:Gupup}
 \end{equation}
 \begin{equation}
-G_{11}^{a}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{a}(E_{1}) \delta(E_{1}-E_{2})
+G_{11}^{a}(E_{1},E_{2}) = 2\pi g_{\uparrow}^{a}(E_{1}) \delta(E_{1}-E_{2}),
 \label{eq:Gupupa}
 \end{equation}
 \begin{equation}
@@ -581,7 +581,7 @@ G_{11}^{<}(E_{1},E_{2}) = 2\pi [A_{11}(E_{1},E_{2})+B_{11}(E_{1},E_{2})] \delta(
 \end{equation}
 in which
 \begin{equation}
-A_{11}(E_{1},E_{2})= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right)
+A_{11}(E_{1},E_{2})= i f(E_{1}) \Gamma(E_{1}) g_{\uparrow}^{r}\left(E_{1}\right)  g_{\uparrow}^{r,*}\left(E_{2}\right),
 \end{equation}
 \begin{equation}
 B_{11}(E_{1},E_{2}) = \gamma^{2} i f(E_{1}-\omega) \Gamma(E_{1}-\omega) g_{\uparrow}^{r}\left(E_{1}\right) G_{\downarrow}^{0r}\left(E_{1}-\omega\right)  g_{\uparrow}^{r*}\left(E_{2}\right) G_{\downarrow}^{0r*}\left(E_{2}-\omega\right) .
@@ -590,7 +590,7 @@ Substitute Eq. (\ref{eq:Gupup}) (\ref{eq:Gupupa}) and (\ref{eq:G11}) into (\ref{
 \begin{equation}
 \begin{split}
 I_{\alpha\uparrow,\uparrow}(\omega_{1})&= -\frac{e}{\hbar}\int dE g_{\uparrow}^{r}(E+\omega_{1}) if(E)\Gamma_{\alpha}(E)\delta(\omega_{1}) + [A_{11}(E+\omega_{1},E)+B_{11}(E+\omega_{1},E)]\delta(-\omega_{1}) \Sigma_{\alpha}^{a}(E)\\
-&\quad -if\left(E+\omega_{1}\right) \Gamma_{\alpha}\left(E+\omega_{1}\right) g_{\uparrow}^{a}\left(E+\omega_{1}\right) \delta(\omega_{1}) - \Sigma_{\alpha}^{r}\left(E+\omega_{1}\right) [A_{11}(E+\omega_{1},E)+B_{11}(E+\omega_{1},E)]\delta(-\omega_{1})
+&\quad -if\left(E+\omega_{1}\right) \Gamma_{\alpha}\left(E+\omega_{1}\right) g_{\uparrow}^{a}\left(E+\omega_{1}\right) \delta(\omega_{1}) - \Sigma_{\alpha}^{r}\left(E+\omega_{1}\right) [A_{11}(E+\omega_{1},E)+B_{11}(E+\omega_{1},E)]\delta(-\omega_{1}).
 \end{split}
 \label{eq:current5}
 \end{equation}
@@ -622,7 +622,7 @@ g_{\uparrow}^{a}(E) = \frac{ G_{\uparrow}^{0a}(E)} {1-\gamma^{2} G_{\uparrow}^{0
 \end{equation}
 in which,
 \begin{equation}
-G_{\uparrow}^{0 r}(E)=\frac{1}{E-\varepsilon^{0}-B_{0} \cos \theta+i \Gamma(E) / 2}
+G_{\uparrow}^{0 r}(E)=\frac{1}{E-\varepsilon^{0}-B_{0} \cos \theta+i \Gamma(E) / 2},
 \end{equation}
 \begin{equation}
 G_{\downarrow}^{0 r}(E-\omega)=\frac{1}{E-\omega-\varepsilon^{0}+B_{0} \cos \theta+i \Gamma(E) / 2},
@@ -644,7 +644,7 @@ g_{\uparrow}^{r}(E) - g_{\uparrow}^{a}(E) &= \frac{G_{\uparrow}^{0r}(E)[1-\gamma
 which cancels $A_{11}$ term in DC current equation and yields
 \begin{equation}
 \begin{split}
-I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E-\omega) \Gamma_{\alpha}(E)|g_{\uparrow}^{r}\left(E\right)|^{2} |G_{\downarrow}^{0r} (E-\omega)|^{2} \big[f(E) - f(E-\omega) \big],
+I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E-\omega) \Gamma_{\alpha}(E)|g_{\uparrow}^{r}\left(E\right)|^{2} |G_{\downarrow}^{0r} (E-\omega)|^{2} \big[f(E) - f(E-\omega) \big].
 \end{split}
 \label{eq:current6}
 \end{equation}
@@ -659,7 +659,7 @@ In parametric pumping setup, left and right leads are identical, i.e. $f_{L}(E) 
 \begin{equation}
 \begin{split}
 g_{\uparrow}^{r}(E) G_{\downarrow}^{0r}(E-\omega) &= \frac{ G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} {1-\gamma^{2} G_{\uparrow}^{0r}(E) G_{\downarrow}^{0r}(E-\omega)} \\
-&= G_{\uparrow}^{0r}(E) g_{\downarrow}^{r}(E-\omega)
+&= G_{\uparrow}^{0r}(E) g_{\downarrow}^{r}(E-\omega),
 \end{split}
 \end{equation}
 then the spin-up current is
