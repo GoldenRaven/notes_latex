@@ -22,8 +22,7 @@
 % \tableofcontents
 
 % \newpage
-\section{spin field effect transistor}
-A type of quantum field effect transistor that operates purely on the flow of spin current in the absence of charge current. The rotating field induces a time-independent dc spin current, and at the same time generates no charge cur- rent. The physical principle of our SFET is due to a spin flip mecha- nism provided by the field.
+Spin field effect transistor is a type of quantum field effect transistor that operates purely on the flow of spin current in the absence of charge current. The rotating field induces a time-independent dc spin current, and at the same time generates no charge current. The physical principle of our SFET is due to a spin flip mechanism provided by the field.
 \section{Hamiltonian}
 A rotating magnetic field is
 \begin{equation}
@@ -252,13 +251,13 @@ d_{n\sigma}^{\dag}(t) =d_{n\sigma}^{\dag}(0) e^{i(\epsilon_{n}+\sigma B_{0} \cos
 d_{n\sigma}(t) =d_{n\sigma}(0)e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta)} - it\sum_{k, \alpha=L, R}T_{k \alpha n}^{*} C_{k \alpha \sigma}
 \end{equation}
 Note $\epsilon_{n}$ is time-dependent, $G^{0r}(t,t')$ depends only on time difference. 
-\begin{equation}
-\begin{split}
-G_{n\sigma}^{0r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle \\
-% =&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
-=&?
-\end{split}
-\end{equation}
+% \begin{equation}
+% \begin{split}
+% G_{n\sigma}^{0r}(t,t') =& -i\theta(t-t')\langle \{d_{n\sigma}(t),d_{n\sigma}^{\dag}(t')\} \rangle \\
+% % =&-i\theta(t-t') e^{-i(\epsilon_{n}+\sigma B_{0} \cos \theta) (t-t')}
+% =&?
+% \end{split}
+% \end{equation}
 % \begin{equation}
 % g^{r}\left(E_{1}, E_{2}\right) = 2\pi g^{r}\left(E_{1}\right) \delta(E_{1}-E_{2})
 % \end{equation}
@@ -673,7 +672,7 @@ I_{\alpha\uparrow,\uparrow}&=-\frac{e}{\hbar}\int dE \gamma^{2}\Gamma(E) \Gamma_
 \end{equation}
 Note that $\Gamma(E) = \Gamma_{L}(E) + \Gamma_{R}(E) = 2\Gamma_{\alpha}(E)$, so if $\Gamma_{\alpha}(E+\omega) = \Gamma_{\alpha}(E-\omega)$, we get
 \begin{equation}
-I_{\alpha\uparrow,\uparrow} + I_{\alpha\downarrow,\downarrow} = 0.
+I_{\alpha e} = I_{\alpha\uparrow,\uparrow} + I_{\alpha\downarrow,\downarrow} = 0.
 \end{equation}
 
 
@@ -732,6 +731,8 @@ Y, K, Kato. Observation of the Spin Hall Effect in Semiconductors[J]. Science, 2
 Antti-Pekka Jauho, Quantum Kinetics in Transport and Optics of Semiconductors, P188.
 \bibitem{Baigeng}
 PRB 67, 092408 (2003).
+\bibitem{rotatingB}
+PhysRevB.100.235432 (2019).
 \end{thebibliography}
 
 \end{CJK}
